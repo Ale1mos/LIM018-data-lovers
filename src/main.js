@@ -7,6 +7,21 @@ import data from './data/ghibli/ghibli.js';
 let imagen=document.getElementById("imagen")
 const films = data.films
 
+
+films.sort((a,b) => {
+  if(a.title < b.title){
+    return -1;
+  }
+  if(a.title > b.title){
+    return 1;
+  }
+  return 0;
+}) 
+console.log(films)
+
+
+
+
 films.forEach(function(films){
   console.log(films.title);
   imagen.innerHTML+= `<div>${films.title} <img src='${films.poster}'> </div>`
