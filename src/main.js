@@ -1,5 +1,6 @@
 // import { example } from './data.js';
 // import data from './data/lol/lol.js';
+import {sortLetter} from './data.js';
 import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 // console.log(data);
@@ -7,10 +8,17 @@ import data from './data/ghibli/ghibli.js';
 let imagen=document.getElementById("imagen")
 const films = data.films
 
+
 films.forEach(function(films){
   console.log(films.title);
   imagen.innerHTML+= `<div>${films.title} <img src='${films.poster}'> </div>`
 })
+
+
+
+
+
+
 // '
 // for(let i=0;i<films.length;i++)
 // let poster=data.films[i].poster
