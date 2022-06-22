@@ -28,8 +28,8 @@ img{
     flex-wrap: nowrap;
     align-items: center
 }
-a {
-    /* font-family: 'Open Sans', sans-serif; */
+a{
+     /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 700;
     font-size: 20px;
@@ -37,4 +37,15 @@ a {
     text-decoration: none;
     text-align: center;
     padding: 14px 16px;
+}
+/* main{
+  width: 300px;
+  height: 20px;
+  text-align: end;
+} */
+.mainImagen{
+  /* width: 30px;
+  height: 20px; */
+  width: clamp(200px, 100%, 3000px);
+
 }
