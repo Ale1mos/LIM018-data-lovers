@@ -8,7 +8,6 @@ let imagen=document.getElementById("imagen")
 const films = data.films
 
 
-
 films.sort((a,b) => {
   if(a.title < b.title){
     return -1;
@@ -20,14 +19,18 @@ films.sort((a,b) => {
 }) 
 console.log('peliculas ordenadas',films)
 
+films.forEach(function(films){
+  console.log('pelicula mostrada en pantalla', films.title);
+  imagen.innerHTML+= `<div>${films.title} <img src='${films.poster}'> </div>`
+})
+
 
 const filtrado_director = films.filter(f => f.director == "Hayao Miyazaki");
 console.log('peliculas filtradas x director',filtrado_director);
 
-
-films.forEach(function(films){
-  console.log('pelicula mostrada en pantalla', films.title);
-  imagen.innerHTML+= `<div>${films.title} <img src='${films.poster}'> </div>`
+filtrado_director.forEach(function(filtrado_director){
+  console.log('pelicula mostrada en pantalla', filtrado_director.title);
+  imagen.innerHTML+= `<div>${filtrado_director.title} <img src='${filtrado_director.poster}'> </div>`
 })
 
 
