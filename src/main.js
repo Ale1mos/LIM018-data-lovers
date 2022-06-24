@@ -5,6 +5,8 @@ import data from './data/ghibli/ghibli.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 // console.log(data);
 // console.log(data.films[0].poster);
+// let poster=data.films[0].director
+// console.log(poster)
 let imagen=document.getElementById("imagen")
 const films = data.films
 
@@ -23,12 +25,13 @@ console.log(films)
 //engloblar la funcionalidad en una funcion
 //sentencia
 const filteredFilms = films.filter((film)=> film.director === "Hayao Miyazaki")
-  
+
 
 filteredFilms.forEach(function(film){
   console.log(film.title);
   imagen.innerHTML+= `<div>${film.title} <img src='${film.poster}'> </div>`
 })
+
 
 
 
