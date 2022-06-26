@@ -47,6 +47,15 @@ films.forEach(function(films){
 })
 
 /// PERSONAJES ORDENADOS EN PANTALLA
+
+let unido = []
+
+films.forEach(function(films){
+  unido = unido.concat(films.people);
+})
+console.log('personajes unidos', unido)
+
+
 films.forEach(function(films){
   films.people.sort((a,b) =>{
     if(a.name < b.name){
@@ -73,6 +82,8 @@ films.forEach(function(films){
     imagen.innerHTML+= `<div>${people.name} <img src='${people.img}'> </div>`
   })
 })
+
+
 
 
 
