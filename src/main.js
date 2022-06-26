@@ -36,52 +36,60 @@ filtrado_director.forEach(function(filtrado_director){
   imagen.innerHTML+= `<div>${filtrado_director.title} <img src='${filtrado_director.poster}'> </div>`
 })
 
-/// PERSONAJES /// 
 
-/// PERSONAJES EN PANTALLA
-films.forEach(function(films){
-  films.people.forEach(function(people){
-    console.log('personaje',people.name);
-    imagen.innerHTML+= `<div>${people.name} <img src='${people.img}'> </div>`
-  })
-})
 
-/// PERSONAJES ORDENADOS EN PANTALLA
+/// PERSONAJES DE LAS PELICULAS /// 
 
-let unido = []
+/// PERSONAJES MOSTRADOS EN PANTALLA ///
+
+let personajes = []
 
 films.forEach(function(films){
-  unido = unido.concat(films.people);
+  personajes = personajes.concat(films.people);
 })
-console.log('personajes unidos', unido)
+console.log('personajes unidos concat',personajes)
 
-
-films.forEach(function(films){
-  films.people.sort((a,b) =>{
-    if(a.name < b.name){
-      return -1;
-    }
-    if(a.name > b.name){
-      return 1;
-    }
-    return 0;
-  })
-  console.log('personajes ordenado',films.people);
-  films.people.forEach(function(people){
-    console.log('personaje ordenado', people.name);
-    imagen.innerHTML+= `<div>${people.name} <img src='${people.img}'> </div>`
-  })
+personajes.forEach(function(personajes){
+  imagen.innerHTML+=`<div>${personajes.name} <img src='${personajes.img}'> </div>`;
+  console.log('personaje mostrado en pantalla', personajes.name) ;
 })
 
-/// PERSONAJES FILTRADOS EN PANTALLA
-films.forEach(function(films){
-  const filtrado = films.people.filter(people => people.specie == "Cat");
-  console.log('personajes filtrados', filtrado);
-  filtrado.forEach(function(people){
-    console.log('personaje filtrado',people.name);
-    imagen.innerHTML+= `<div>${people.name} <img src='${people.img}'> </div>`
-  })
+/// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
+
+personajes.sort((a,b) =>{
+  if(a.name < b.name){
+    return -1;
+  }
+  if(a.name > b.name){
+    return 1;
+  }
+  return 0;
 })
+console.log('personajes ordenados sort',personajes)
+
+personajes.forEach(function(personajes){
+  imagen.innerHTML+=`<div>${personajes.name} <img src='${personajes.img}'> </div>`;
+  console.log('personajes ordenados en pantalla', personajes.name);
+})
+
+/// PERSONAJES FILTRADOS EN PANTALLA ///
+
+const personajes_filtrado = personajes.filter(personajes => personajes.specie == 'Cat');
+console.log('personajes filtrados filter', personajes_filtrado);
+
+personajes_filtrado.forEach(function(personajes){
+  imagen.innerHTML+= `<div>${personajes.name} <img src='${personajes.img}'> </div>`;
+  console.log('personajes filtrados en pantalla',personajes.name);
+})
+
+// films.forEach(function(films){
+//   const filtrado = films.people.filter(people => people.specie == "Cat");
+//   console.log('personajes filtrados', filtrado);
+//   filtrado.forEach(function(people){
+//     console.log('personaje filtrado',people.name);
+//     imagen.innerHTML+= `<div>${people.name} <img src='${people.img}'> </div>`
+//   })
+// })
 
 
 
