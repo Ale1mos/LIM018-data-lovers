@@ -82,14 +82,6 @@ personajes_filtrado.forEach(function(personajes){
   console.log('personajes filtrados en pantalla',personajes.name);
 })
 
-// films.forEach(function(films){
-//   const filtrado = films.people.filter(people => people.specie == "Cat");
-//   console.log('personajes filtrados', filtrado);
-//   filtrado.forEach(function(people){
-//     console.log('personaje filtrado',people.name);
-//     imagen.innerHTML+= `<div>${people.name} <img src='${people.img}'> </div>`
-//   })
-// })
 
 
 
