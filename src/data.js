@@ -1,16 +1,22 @@
-// export const sortLetter = (data, order) => {
-//   if (order === "A-Z") {
-//     return data.sort((a, z) => a.title > z.title ? 1 : -1);
-//   } else if (order === "Z-A") {
-//     return data.sort((a, z) => a.title > z.title ? -1 : 1);
-//   }
-// };
-// estas funciones son de ejemplo
 
-// const myCopy = films
-// const myCopy1 = Array.from(films)
-// const myCopy2 = [...films]
-// console.log(myCopy2)
+export const ordenarAZ = (films) =>{
+  films.sort((a,b) => {
+    if(a.title < b.title){
+      return -1;
+    }
+    if(a.title > b.title){
+      return 1;
+    }
+    return 0;
+  }) 
+  return films
+}
+export const filterDirector = (films,nameDirector) => {
+
+  let result = films.filter(f => f.director == nameDirector);
+  // let result = data.filter(movie => movie[category] === value);
+  return result;
+};
 
 let imagen=document.getElementById("imagen")
 
