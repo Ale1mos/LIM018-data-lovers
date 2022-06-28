@@ -2,6 +2,7 @@
   "env": {
     "browser": true
   },
+  "plugins": ["jest-dom"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
