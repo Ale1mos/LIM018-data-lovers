@@ -1,6 +1,6 @@
 // import { filtrarPersonajes } from '../src/data.js';
 
-import { obtenerPersonajes, ordenarPersonajes } from '../src/data.js';
+import { obtenerPersonajes } from '../src/data.js';
 
 // const arreglo = [{specie: 'Cat'},{specie: 'pizza'}]
 
