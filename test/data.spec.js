@@ -24,7 +24,7 @@ describe('obtenerPersonajes', () => {
     const films = [{'people': [{'name': 'B'}]},{'people': [{'name': 'A'}]}]
     expect(obtenerPersonajes(films)).toEqual([{'name': 'B'},{'name': 'A'}]);
   });
-}
+})
 
 ///para la funcion obtnener hay que llamara la funcion xq no retorna algo
 // it('returns characters', () => {
