@@ -42,39 +42,42 @@
 /// PERSONAJES DE LAS PELICULAS /// 
 
 import data from './data/ghibli/ghibli.js';
-import {mostrarPersonajes} from './data.js';
+import {obtenerPersonajes} from './data.js';
 import {ordenarPersonajes} from './data.js';
 import {filtrarPersonajes} from './data.js';
 
 const films = data.films
-// let imagen=document.getElementById("imagen")
+let imagen=document.getElementById("imagen")
 
 
-/// PERSONAJES MOSTRADOS EN PANTALLA ///
-const personajes = mostrarPersonajes(films)
+/// PERSONAJES EN PANTALLA///
+const personajes = obtenerPersonajes(films)
+for (let i = 0 ; i< personajes.length ; i++){
+    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+  }
+console.log('personajes mostrados')
+
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
 ordenarPersonajes(personajes)
+for(let i=0 ; i< personajes.length; i++){
+    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+  }
+console.log('personajes ordenados mostrados')
+
 
 /// PERSONAJES FILTRADOS EN PANTALLA ///
-
-const personajes_filtrados = filtrarPersonajes(personajes)
-console.table(personajes_filtrados)
-
-// const personajes_filtrado = personajes.filter(personajes => personajes.specie == 'Cat');
-// console.log('personajes filtrados', personajes_filtrado);
-
-// for(let i=0 ; i< personajes_filtrado.length; i++){
-//   imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
-// }
-// console.log('personajes filtrados mostrados')
+const personajes_filtrado = filtrarPersonajes(personajes)
+for(let i=0 ; i< personajes_filtrado.length; i++){
+  imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
+}
+console.log('personajes filtrados mostrados')
 
 
 
-// personajes_filtrado.forEach(function(personajes){
-//   imagen.innerHTML+= `<div>${personajes.name} <img src='${personajes.img}'> </div>`;
-//   console.log('personajes filtrados en pantalla',personajes.name);
-// })
+
+
+
 
 
 
