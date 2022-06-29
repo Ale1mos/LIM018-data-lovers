@@ -24,8 +24,8 @@ export const ordenarPersonajes = (personajes) => {
 }
 
 
-export const filtrarPersonajes = (personajes) => {
-  const personajes_filtrado = personajes.filter(personajes => personajes.specie == 'Cat');
+export const filtrarPersonajes = (personajes,especie) => {
+  const personajes_filtrado = personajes.filter(personajes => personajes.specie == especie);
   console.log('personajes filtrados',personajes_filtrado)
   return personajes_filtrado
 }

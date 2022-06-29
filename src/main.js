@@ -47,6 +47,7 @@ import {ordenarPersonajes} from './data.js';
 import {filtrarPersonajes} from './data.js';
 
 const films = data.films
+const especie = 'Cat'
 let imagen=document.getElementById("imagen")
 
 
@@ -67,7 +68,7 @@ console.log('personajes ordenados mostrados')
 
 
 /// PERSONAJES FILTRADOS EN PANTALLA ///
-const personajes_filtrado = filtrarPersonajes(personajes)
+const personajes_filtrado = filtrarPersonajes(personajes,especie)
 for(let i=0 ; i< personajes_filtrado.length; i++){
   imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
 }
