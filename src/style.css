@@ -3,8 +3,9 @@
   margin: 0;
 }
 body{
-  background-color: yellow;
-  width: 100%;
+  background-image: url("./images/fondo.jpg");
+  background-repeat: space repeat;
+    width: 100%;
 }
 .figureBanner img{
   width: 100%;
@@ -33,44 +34,159 @@ a{
   text-decoration: none;
   text-align: center;
   padding: 14px 16px;
+ 
 }
 #imagen{
-  background-color: orange;
-  width: 100%;
   display: flex;
-  border: solid green;
-}
-.portadaTitle{
-  background-color: aqua;
-  width: 70%;
-  border: solid brown;
-  display: flex;
-}
-.portadaTitle h3{
-  color: red;
-}
-.portadaTitle img{
-  width: 250px;
-  height: 360px;
-  background-color: green;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* flex-direction: ; */
+  /* justify-content: space-evenly; */
+  border: solid green 10px;
+  /* align-items: center; */
+  /* flex-direction: row; */
+  /* object-fit: cover; */
+  /* box-sizing: border-box; */
+  /* width: clamp(200px, 100%, 3000px);  */
 }
 
-.options{
+.container{
+  border: solid rgb(219, 207, 68);
+  display: flex;
+}
+.frontCard, .backCard {
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+/* .frontCard, .backCard
+  position: absolute;
+  justify-content: center;
+  align-items: centers;
+  width: 100%;
+  height: 100%; */
+.posterTitle{
+  background-color: rgb(235, 168, 23);
+  border: solid rgb(43, 4, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  margin-left: 90px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 320px;
+  height: 480px;
+}
+.posterTitle h2{
+  color: rgb(29, 8, 214);
+  margin: 20px;
+  margin-top: 3px;
+}
+.posterTitle img{
+  width: 250px;
+  height: 360px;
+  border: solid salmon;
+  border-radius: 10px;
+}
+.backCard p{
+  border: solid rgb(40, 59, 199);
+  font-size: large;
+}
+
+.info{
+  background-color: gray;
+  border-radius: 10px;
+  filter: drop-shadow(7px 10px 10px gray);
+  /* width: 550px; */
+  height: 200px;
+  padding: 17px;
+  margin-top: 125px;
+  margin-left: 110px;
+  border: solid blue;
+  overflow: scroll;
+  
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  /* margin: 2rem auto; */
+  /* border: 1px solid #aaa; */
+  height: 300px;
+  width:90%;
+  max-width: 550px;
+  /* background: #f1f2f3; */
+  overflow:auto;
+  box-sizing: border-box;
+  /* padding:0 1rem; */
+
+  /* display: flex;
+  flex-direction: column; */
+}
+.info::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.info::-webkit-scrollbar:vertical {
+  width:10px;
+}
+.info::-webkit-scrollbar-button:increment,.info::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.info::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.info::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #4177ae;
+}
+
+.info::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+
+
+
+
+
+
+.info p{
+  padding: 2px;
+  text-align: justify;
+}
+#options{
   display: flex;
   justify-content: space-between;
-  border: solid rgb(226, 205, 67) 7px;
+  border: solid rgb(136, 67, 226) 7px;
 }
-option{
+.itemSelect{
   color: rgb(227, 167, 15);
   background-color: rgb(37, 43, 208);
+ 
 }
 select{
   width: 200px;
   height: 30px;
   cursor: pointer;
   
-  
 }
-#container{
-  border: solid seagreen;
+/* .personajes{
+  border: solid blue;
+  width: 250px;
+  height: 360px;
 }
+.personajes h3{
+  border: solid rgb(0, 255, 30);
+  color: brown;
+}
+.personajes img{
+  border: solid blue;
+  width: 250px;
+  height: 360px;
+ 
+} */

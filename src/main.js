@@ -1,83 +1,124 @@
-// import { example } from './data.js';
-// import data from './data/lol/lol.js';
-// import {sortLetter} from './data.js';
 import data from './data/ghibli/ghibli.js';
-import {ordenarAZ,filterDirector} from './data.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-// console.log(data);
-// console.log(data.films[0].poster);
-// let poster=data.films[0].director
-// console.log(poster)
-
-// let imagen=document.getElementById("imagen")  este si
-// const films = data.films   este si
-
-
-// films.sort((a,b) => {
-//   if(a.title < b.title){
-//     return -1;
-//   }
-//   if(a.title > b.title){
-//     return 1;
-//   }
-//   return 0;
-// }) 
-// console.log('peliculas ordenadas',films)
-
-// films.forEach(function(films){
-//   console.log('pelicula mostrada en pantalla', films.title);
-//   imagen.innerHTML+= `<div>${films.title} <img src='${films.poster}'> </div>`
-// })
-
-
-// const filtrado_director = films.filter(f => f.director == "Hayao Miyazaki");
-// console.log('peliculas filtradas x director',filtrado_director);
-
-// filtrado_director.forEach(function(filtrado_director){
-//   console.log('pelicula mostrada en pantalla', filtrado_director.title);
-//   imagen.innerHTML+= `<div>${filtrado_director.title} <img src='${filtrado_director.poster}'> </div>`
-// })
-
-
-
 /// PERSONAJES DE LAS PELICULAS /// 
+import {ordenarAZ,filterDirector,filtering,ordenarPersonajes,filtrarPersonajes} from './data.js';
 
-import data from './data/ghibli/ghibli.js';
-import {mostrarPersonajes} from './data.js';
-import {ordenarPersonajes} from './data.js';
-import {filtrarPersonajes} from './data.js';
-
+// let itemAZ = document.getElementById("itemAZ");
+// let directors = document.getElementById("directors")
 const films = data.films
-ordenarAZ(films)
+// ordenarAZ(films)
 // console.log(films)
-// console.log(ordenarAZ(films))
 
-const filmsOrder = ordenarAZ(films)
 const filterByDirector = filterDirector(films,"Hayao Miyazaki")
 
-// console.log(filterByDirector)
+console.table(filterByDirector)
 
 
+const mainImagen = document.querySelector(".mainImagen")
 
-// films.forEach(function(films){
-//   console.log('pelicula mostrada en pantalla', films.title);
-//   imagen.innerHTML+= `<div>${films.title} <img src='${films.poster}'> </div>`
-// })
-
-function showFilms(films){
-  films.forEach(function(element){
-    console.log('pelicula mostrada en pantalla', element.title);
-    imagen.innerHTML+= `<div class="portadaTitle"><h3>${element.title}</h3> <img src='${element.poster}'> </div>`
-})
+function showFilms(element){
+  mainImagen.innerHTML= "";
+  for (const film of element){
+    const elementTitle = `
+    <div id="divCard" class="film">
+        <div class="container">
+            <div class="face">
+                <div class="posterTitle">
+                    <h2>${film.title}</h2>
+                    <img alt="Film poster" src="${film.poster}"/>
+                </div>
+            </div>
+            <div class="info">
+                <p>Año de Lanzamiento: ${film.release_date}</p>
+                <p>Director: ${film.director}</p>
+                <p>Productor: ${film.producer}</p>
+                <p>Score: ${film.rt_score}</p>
+            </div>
+        </div>
+    </div>`;
+mainImagen.innerHTML += elementTitle;
+}
 }
 showFilms(films)
+
+itemAZ.addEventListener("change",(event)=>{
+  const selectedSort = event.target.value;
+  const filteredSort = ordenarAZ(films, selectedSort);
+  showFilms(filteredSort);
+});
+
+director.addEventListener("change",(event)=>{
+  const selectedDirector = event.target.value;
+  const filteredDirector = filtering(films, "director", selectedDirector );
+  showFilms(filteredDirector);
+});
+
+producer.addEventListener("change",(event)=>{
+  const selectedProducer = event.target.value;
+  const filteredProducer = filtering(films, "producer", selectedProducer );
+  showFilms(filteredProducer);
+});
+
+date.addEventListener("change",(event)=>{
+  const selectedDate = event.target.value;
+  const filteredDate = filtering(films, "release_date", selectedDate );
+  showFilms(filteredDate);
+});
+
+const posterTitle = document.querySelector(".posterTitle")
+// const face = document.getElementById("face")
+
+posterTitle.addEventListener("click",function(){
+  function showFilms(element){
+    mainImagen.innerHTML= "";
+    for (const film of element){
+      const elementTitle = `
+      <div id="divCard" class="film">
+          <div class="container">
+              <div class="face">
+                <div class="posterTitle">
+                  <h2>${film.title}</h2>
+                  <img class="face" alt="Film poster" src="${film.poster}"/>
+                </div>
+              </div>
+              <div class="info">
+                  <p> Año de Lanzamiento: ${film.release_date}</p>
+                  <p>Director: ${film.director}</p>
+                  <p>Productor: ${film.producer}</p>
+                  <p>Score: ${film.rt_score}</p>
+                  <br><br>
+                  <p>Descripción: ${film.description}</p>
+              </div>
+          </div>
+      </div>`;
+  mainImagen.innerHTML += elementTitle;
+  }
+  }
+  showFilms(films)
+  
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let directorProducer = result;
 // let imagen=document.getElementById("imagen")
 
 
 /// PERSONAJES MOSTRADOS EN PANTALLA ///
-const personajes = mostrarPersonajes(films)
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
+// no ordena aun
 ordenarPersonajes(personajes)
 
 /// PERSONAJES FILTRADOS EN PANTALLA ///
@@ -85,20 +126,6 @@ ordenarPersonajes(personajes)
 const personajes_filtrados = filtrarPersonajes(personajes)
 console.table(personajes_filtrados)
 
-// const personajes_filtrado = personajes.filter(personajes => personajes.specie == 'Cat');
-// console.log('personajes filtrados', personajes_filtrado);
-
-// for(let i=0 ; i< personajes_filtrado.length; i++){
-//   imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
-// }
-// console.log('personajes filtrados mostrados')
-
-
-
-// personajes_filtrado.forEach(function(personajes){
-//   imagen.innerHTML+= `<div>${personajes.name} <img src='${personajes.img}'> </div>`;
-//   console.log('personajes filtrados en pantalla',personajes.name);
-// })
 
 
 
@@ -107,10 +134,8 @@ console.table(personajes_filtrados)
 
 
 
-// '
-// for(let i=0;i<films.length;i++)
-// let poster=data.films[i].poster
-// imagen.src=poster;
+
+
 
 
 
