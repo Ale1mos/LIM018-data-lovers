@@ -27,11 +27,13 @@ function showFilms(element){
                     <img alt="Film poster" src="${film.poster}"/>
                 </div>
             </div>
-            <div class="info">
-                <p>Año de Lanzamiento: ${film.release_date}</p>
-                <p>Director: ${film.director}</p>
-                <p>Productor: ${film.producer}</p>
-                <p>Score: ${film.rt_score}</p>
+            <div class="info">             
+              <div class="infoFirst">
+                <p class="text">Año de Lanzamiento: ${film.release_date}</p>
+                <p class="text">Director: ${film.director}</p>
+                <p class="text">Productor: ${film.producer}</p>
+                <p class="text">Score: ${film.rt_score}</p>  
+              </div>                
             </div>
         </div>
     </div>`;
@@ -81,12 +83,14 @@ posterTitle.addEventListener("click",function(){
                 </div>
               </div>
               <div class="info">
-                  <p> Año de Lanzamiento: ${film.release_date}</p>
+                <div class="infoFirst">
+                  <p>Año de Lanzamiento: ${film.release_date}</p>
                   <p>Director: ${film.director}</p>
                   <p>Productor: ${film.producer}</p>
-                  <p>Score: ${film.rt_score}</p>
+                  <p>Score: ${film.rt_score}</p>  
+                </div>                
                   <br><br>
-                  <p>Descripción: ${film.description}</p>
+                  <p class="infoSecond">Descripción: ${film.description}</p>
               </div>
           </div>
       </div>`;
