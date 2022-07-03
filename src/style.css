@@ -189,9 +189,9 @@ a{
   overflow: hidden;
   height: 30px;
   width:400px
-  border-radius: 3px;
+
+  /* border-radius: 3px; */
   
- 
 }
 
 select{
