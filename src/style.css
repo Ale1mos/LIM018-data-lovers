@@ -44,6 +44,9 @@ a{
   padding: 14px 16px;
  
 }
+.container{
+  display: flex;
+}
 #imagen{
   display: flex;
   flex-direction: column;
@@ -58,10 +61,6 @@ a{
   /* width: clamp(200px, 100%, 3000px);  */
 }
 
-.container{
-  /* border: solid rgb(219, 207, 68); */
-  display: flex;
-}
 .frontCard, .backCard {
   display: flex;
   flex-direction: column;
@@ -140,6 +139,14 @@ a{
 .text{
   font-size: 17px;
 }
+.infoFirstB{
+  margin-top: 50px;
+  border: solid blue;
+}
+.infoSecond{
+  border: solid yellowgreen;
+}
+
 /* .info .infoFirst{
   display: flex;
   flex-direction: column;
@@ -184,13 +191,14 @@ a{
 
 .itemSelect{
   color: black;
-  background-color: #a1be2e;
+  background-color: #f67921;
+  border: solid hwb(0 0% 100%);
   appearance: none;
   overflow: hidden;
   height: 30px;
-  width:400px
+  width:280px
 
-  /* border-radius: 3px; */
+    /* border-radius: 3px; */
   
 }
 

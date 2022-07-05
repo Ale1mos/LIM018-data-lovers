@@ -8,10 +8,8 @@ const films = data.films
 // ordenarAZ(films)
 // console.log(films)
 
-const filterByDirector = filterDirector(films,"Hayao Miyazaki")
-
-console.table(filterByDirector)
-
+// const btnReseña =document.getElementById("btnReseña")
+// btnReseña.style.display="none"
 
 const mainImagen = document.querySelector(".mainImagen")
 
@@ -28,7 +26,7 @@ function showFilms(element){
                 </div>
             </div>
             <div class="info">             
-              <div class="infoFirst">
+              <div class="infoFirstA">
                 <p class="text">Año de Lanzamiento: ${film.release_date}</p>
                 <p class="text">Director: ${film.director}</p>
                 <p class="text">Productor: ${film.producer}</p>
@@ -37,10 +35,42 @@ function showFilms(element){
             </div>
         </div>
     </div>`;
+    
+
 mainImagen.innerHTML += elementTitle;
 }
 }
 showFilms(films)
+
+
+const posterTitle = document.querySelector(".posterTitle")
+// const face = document.getElementById("face")
+posterTitle.addEventListener("click",function(){
+  function showFilms(element){
+    mainImagen.innerHTML= "";
+    for (const film of element){
+      const elementTitle = `
+      <div id="divCard" class="film">
+          <div class="container">
+              <div class="face">
+                <div class="posterTitle">
+                  <h2>${film.title}</h2>
+                  <img class="face" alt="Film poster" src="${film.poster}"/>
+                </div>
+              </div>
+              <div class="info">
+                <div>
+                  <p class="infoSecond">Descripción: ${film.description}</p>
+                </div>
+              </div>
+          </div>
+      </div>`;
+  mainImagen.innerHTML += elementTitle;
+  }
+  }
+  showFilms(films)
+  
+})
 
 itemAZ.addEventListener("change",(event)=>{
   const selectedSort = event.target.value;
@@ -66,40 +96,12 @@ date.addEventListener("change",(event)=>{
   showFilms(filteredDate);
 });
 
-const posterTitle = document.querySelector(".posterTitle")
-// const face = document.getElementById("face")
+const btnReseña = document.getElementById("btnReseña")
 
-posterTitle.addEventListener("click",function(){
-  function showFilms(element){
-    mainImagen.innerHTML= "";
-    for (const film of element){
-      const elementTitle = `
-      <div id="divCard" class="film">
-          <div class="container">
-              <div class="face">
-                <div class="posterTitle">
-                  <h2>${film.title}</h2>
-                  <img class="face" alt="Film poster" src="${film.poster}"/>
-                </div>
-              </div>
-              <div class="info">
-                <div class="infoFirst">
-                  <p>Año de Lanzamiento: ${film.release_date}</p>
-                  <p>Director: ${film.director}</p>
-                  <p>Productor: ${film.producer}</p>
-                  <p>Score: ${film.rt_score}</p>  
-                </div>                
-                  <br><br>
-                  <p class="infoSecond">Descripción: ${film.description}</p>
-              </div>
-          </div>
-      </div>`;
-  mainImagen.innerHTML += elementTitle;
-  }
-  }
-  showFilms(films)
-  
+btnReseña.addEventListener("click",function(){
+
 })
+
 
 
 
