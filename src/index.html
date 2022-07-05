@@ -7,72 +7,110 @@
   </head>
   <body>
     <div id="root"></div>
-    <div>
+    <div id="menuContainer">
       <figure class="figureBanner">
         <img  src="./images/banner1.jpg" alt="">
       </figure>
       <nav>
         <ul id="menu">
-          <a href="#">RESEÑA</a>
+          <a id="btnReseña" href="#">RESEÑA</a>
           <a href="#">ANIMACIONES</a>
           <a href="#">PERSONAJES</a>
           <a href="#">LOCACIONES</a>
         </ul>
       </nav>
-      <div>
+      <div id="options">
         <div>
-          <select name="" class="itemSelect">
-            <option value="">Alfabéticamente</option>
+          <select id="itemAZ" class="itemSelect">
+            <option selected disabled value="">Alfabeticamente</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
           </select>
         </div>
         <div>
-          <select name="" class="itemSelect">
-            <option value="">Director</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-          </select>
-        </div>
-        <div>
-          <select name="" class="itemSelect">
-            <option value="">Productor</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-          </select>
-        </div>
-        <div>
-          <select name="" class="itemSelect">
-            <option value="">Director</option>
+          <select id="director" class="itemSelect">
+            <option selected disabled value="">Director</option>
             <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-            <option value="Z-A">Z-A</option>
+            <option value="Isao Takahata">Isao Takahata</option>
+            <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+            <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+            <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+            <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
           </select>
         </div>
         <div>
-          <select name="" class="itemSelect">
-            <option value="">Lanzamiento</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-          </select>
-        </div>
-        <div>
-          <select name="" class="itemSelect">
-            <option value="">Animaciones</option>
+          <select id="producer" class="itemSelect">
+            <option selected disabled value="">Productor</option>
+            <option value="Isao Takahata">Isao Takahata</option>
             <option value="Hayao Miyazaki">Hayao Miyazaki</option>
-            <option value="Z-A">Z-A</option>
+            <option value="Toru Hara">Toru Hara</option>
+            <option value="Toshio Suzuki">Toshio Suzuki</option>
+            <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>      
           </select>
         </div>
         <div>
+          <select name="" class="itemSelect">
+            <option selected disabled value="">Especie</option>
+            <option value="Human">Human</option>
+            <option value="Cat">Cat</option>
+            <option value="Witch">Witch</option>
+            <option value="Raccoon Dog">Raccoon Dog</option>
+            <option value="Red elk">Red elk</option>
+            <option value="Wolf">Wolf</option>
+            <option value="Deity, Dragon">Deity, Dragon</option>
+            <option value="Raccoon Dog">Spirit of The White Fox</option>
+            <option value="Bird">Bird</option>
+            <option value="Wizard">Wizard</option>
+            <option value="Dog">Dog</option>
+            <option value="Arch-mage/Human">Arch-mage/Huma</option>
+            <option value="Fish/Human">Fish/Human</option>
+            <option value="Wizard">Wizard</option>
+            <option value="Wizard">Wizard</option>
+            <option value="Wizard">Wizard</option>
+          </select>
+        </div>
+        <div>
+          <select id="date" class="itemSelect">
+            <option selected disabled value="">Lanzamiento</option>
+            <option value="1986">1986</option>
+            <option value="1988">1988</option>
+            <option value="1989">1989</option>
+            <option value="1991">1991</option>
+            <option value="1992">1992</option>
+            <option value="1994">1994</option>
+            <option value="1995">1995</option>
+            <option value="1997">1997</option>
+            <option value="1999">1999</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2004">2004</option>
+            <option value="2006">2006</option>
+            <option value="2008">2008</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+          </select>
+        </div>
+        <!-- <div>
           <select name="" class="itemSelect">
             <option value="">Especie</option>
             <option value="Hayao Miyazaki">Hayao Miyazaki</option>
             <option value="Z-A">Z-A</option>
           </select>
-        </div>
-
+        </div> -->
       </div>
-      <main id="info" class="maininfo"></main>
+      <!-- <main id="info" class="maininfo"></main> -->
     </div>
+    <!-- <section id="reseña">
+      <div>
+        <h1>Reseña</h1>
+        <p>Un artículo debe utilizarse para representar una unidad de contenido en una página web que, en principio, podría existir por sí sola o ser reutilizada. Por ejemplo, una publicación de blog, publicación de foro o artículo de revista o periódico debe marcarse con el elemento del artículo.
+
+        Una sección, por otro lado, debe usarse para representar una sección de un documento que está relacionada con el mismo tema pero que no se puede distribuir o reutilizar de forma independiente. La introducción, las noticias y la información de contacto en una página de inicio, por ejemplo, deben marcarse con elementos de sección.</p>
+      </div> -->
+
+    </section>
     <br><br>
     <main id="imagen" class="mainImagen"></main>
 

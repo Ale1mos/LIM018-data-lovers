@@ -1,27 +1,36 @@
+export const filtering = (array, element, condition)=> 
+array.filter((a) => a[element] === condition);
 
-export const obtenerPersonajes = (films) => {
-// export const ordenarAZ = (films) =>{
-//   films.sort((a,b) => {
-//     if(a.title < b.title){
-//       return -1;
-//     }
-//     if(a.title > b.title){
-//       return 1;
-//     }
-//     return 0;
-//   }) 
-//   return films
-// }
-// export const filterDirector = (films,nameDirector) => {
+export const ordenarAZ = (data, orden) => {
+  if (orden === "A-Z") {
+    return data.sort((a, b) => a.title > b.title ? 1 : -1);
+  } else if (orden === "Z-A") {
+    return data.sort((a, b) => a.title > b.title ? -1 : 1);
+  }
+};
 
-//   let result = films.filter(f => f.director == nameDirector);
-//   // let result = data.filter(movie => movie[category] === value);
-//   return result;
+export const filterDirector = (films,nameDirector) => {
+
+  let result = films.filter(f => f.director == nameDirector);
+  // let result = data.filter(movie => movie[category] === value);
+  return result;
+};
+// prueba
+// export const mostrarDirector = (films) => {
+//   let directores = [];
+//   console.log('peliculas',films)
+//   for (let i = 0 ; i<films.length ; i++){
+//     directores = directores.concat(films[i].director)
+//   }
+//   return directores;
 // };
 
-// let imagen=document.getElementById("imagen")
 
-// export const mostrarPersonajes = (films) => {
+
+let imagen=document.getElementById("imagen")
+
+
+export const obtenerPersonajes = (films) => {
   let personajes = [];
   console.log('peliculas',films)
   for (let i = 0 ; i< films.length ; i++){
