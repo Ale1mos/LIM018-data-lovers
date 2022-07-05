@@ -1,6 +1,6 @@
 import data from './data/ghibli/ghibli.js';
 /// PERSONAJES DE LAS PELICULAS /// 
-import {ordenarAZ,filterDirector,filtering,ordenarPersonajes,filtrarPersonajes} from './data.js';
+import {ordenarAZ,filterDirector,filtering,obtenerPersonajes,ordenarPersonajes,filtrarPersonajes} from './data.js';
 
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
@@ -102,35 +102,49 @@ btnReseña.addEventListener("click",function(){
 
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let directorProducer = result;
 // let imagen=document.getElementById("imagen")
 
 
 /// PERSONAJES MOSTRADOS EN PANTALLA ///
 
+// import data from './data/ghibli/ghibli.js';
+// import {obtenerPersonajes} from './data.js';
+// import {ordenarPersonajes} from './data.js';
+// import {filtrarPersonajes} from './data.js';
+
+
+const especie = 'Cat'
+let imagen=document.getElementById("imagen")
+
+
+/// PERSONAJES EN PANTALLA///
+const personajes = obtenerPersonajes(films)
+for (let i = 0 ; i< personajes.length ; i++){
+    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+  }
+console.log('personajes mostrados')
+
+
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
 // no ordena aun
 ordenarPersonajes(personajes)
+for(let i=0 ; i< personajes.length; i++){
+    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+  }
+console.log('personajes ordenados mostrados')
+
 
 /// PERSONAJES FILTRADOS EN PANTALLA ///
+const personajes_filtrado = filtrarPersonajes(personajes,especie)
+for(let i=0 ; i< personajes_filtrado.length; i++){
+  imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
+}
+console.log('personajes filtrados mostrados')
 
-const personajes_filtrados = filtrarPersonajes(personajes)
-console.table(personajes_filtrados)
+
+
+
 
 
 
