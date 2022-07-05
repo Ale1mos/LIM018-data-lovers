@@ -26,6 +26,7 @@ describe('obtenerPersonajes', () => {
   });
 })
 
+
 ///para la funcion obtnener hay que llamara la funcion xq no retorna algo
 // it('returns characters', () => {
 //   const films = [{'people': [{'name': 'B'}]},{'people': [{'name': 'A'}]}]
