@@ -2,13 +2,13 @@
   padding: 0;
   margin: 0;
 }
-body{
+
+/* body{
   background-image: url("./images/fondo.jpg");
-  
-  /* background-repeat: space repeat; */
   background-size: contain;
   width: 100%;
-}
+} */
+
 #menuContainer{
   background-color: black;
   padding: 0;
@@ -222,3 +222,63 @@ select{
   height: 360px;
  
 } */
+
+
+
+.character{
+  margin: 64px 100px;
+}
+
+.character_container{
+  background-color: #be2e2e;
+}
+
+.character_title{
+  font-size: 32px;
+  text-align: center;
+}
+
+.filterSearch{
+  background-color: #797979;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mainCards{
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}   
+
+.card{
+  background-color: #f67921;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 16px; 
+  background-color: white;
+  margin: 22px 15px 22px 0px;
+}
+
+section.character div.card ul{
+  margin: 0;
+  padding: 0;
+  font-weight: 600; 
+  font-size: 16px;
+  text-align: center;
+}
+
+
+
+section.location{
+  background-color: #4177ae;
+}
+
+
+
+
+

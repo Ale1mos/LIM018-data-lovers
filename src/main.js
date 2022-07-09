@@ -1,6 +1,6 @@
 import data from './data/ghibli/ghibli.js';
 /// PERSONAJES DE LAS PELICULAS /// 
-import {ordenarAZ,filterDirector,filtering,obtenerPersonajes,ordenarPersonajes,filtrarPersonajes} from './data.js';
+import {ordenarAZ,filterDirector,filtering,obtenerPersonajes,ordenarPersonajes,filtrarGenero,filtrarEspecie} from './data.js';
 
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
@@ -106,41 +106,53 @@ btnReseña.addEventListener("click",function(){
 // let imagen=document.getElementById("imagen")
 
 
-/// PERSONAJES MOSTRADOS EN PANTALLA ///
+
+///----PERSONAJES------///
 
 // import data from './data/ghibli/ghibli.js';
 // import {obtenerPersonajes} from './data.js';
 // import {ordenarPersonajes} from './data.js';
 // import {filtrarPersonajes} from './data.js';
+// const especie = 'Cat'
+let characterCards=document.getElementById("characterCards")
+let sortCharacter=document.getElementById("sortCharacter")
+let gender=document.getElementById('gender')
+let specie=document.getElementById('specie')
 
-
-const especie = 'Cat'
-let imagen=document.getElementById("imagen")
-
-
-/// PERSONAJES EN PANTALLA///
-const personajes = obtenerPersonajes(films)
-for (let i = 0 ; i< personajes.length ; i++){
-    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+function showCharacter(element){
+  characterCards.innerHTML= "";
+  for(let i=0 ; i< element.length; i++){
+    characterCards.innerHTML+=`<div class='card'><ul> <li>${element[i].name}</li> <li><img src='${element[i].img}'></li> </ul></div>`;
   }
-console.log('personajes mostrados')
+}
 
+const personajes = obtenerPersonajes(films)
+
+/// PERSONAJES EN PANTALLA ///
+showCharacter(personajes)
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
-// no ordena aun
-ordenarPersonajes(personajes)
-for(let i=0 ; i< personajes.length; i++){
-    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
-  }
-console.log('personajes ordenados mostrados')
-
+sortCharacter.addEventListener("change",(event)=>{
+  // const selectedSort = event.target.value;
+  // const filteredSort = ordenarPersonajes(personajes);
+  ordenarPersonajes(personajes);
+  showCharacter(personajes);
+});
 
 /// PERSONAJES FILTRADOS EN PANTALLA ///
-const personajes_filtrado = filtrarPersonajes(personajes,especie)
-for(let i=0 ; i< personajes_filtrado.length; i++){
-  imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
-}
-console.log('personajes filtrados mostrados')
+gender.addEventListener("change",(event)=>{
+  const selectedGender = event.target.value;
+  const filteredGender = filtrarGenero(personajes, selectedGender);
+  showCharacter(filteredGender);
+});
+
+specie.addEventListener("change",(event)=>{
+  const selectedSpecie = event.target.value;
+  const filteredSpecie = filtrarEspecie(personajes, selectedSpecie);
+  showCharacter(filteredSpecie);
+});
+
+
 
 
 
