@@ -1,5 +1,6 @@
+
 import data from './data/ghibli/ghibli.js';
-/// PERSONAJES DE LAS PELICULAS /// 
+
 import {ordenarAZ,filterDirector,filtering,obtenerPersonajes,ordenarPersonajes,filtrarPersonajes} from './data.js';
 
 // let itemAZ = document.getElementById("itemAZ");
@@ -8,15 +9,16 @@ const films = data.films
 // ordenarAZ(films)
 // console.log(films)
 
-// const btnReseña =document.getElementById("btnReseña")
-// btnReseña.style.display="none"
+
+const containerA = document.getElementById("containerA")
+containerA.style.display="none"
 
 const mainImagen = document.querySelector(".mainImagen")
 
 function showFilms(element){
   mainImagen.innerHTML= "";
   for (const film of element){
-    const elementTitle = `
+    const elementIndex = `
     <div id="divCard" class="film">
         <div class="container">
             <div class="face">
@@ -37,19 +39,48 @@ function showFilms(element){
     </div>`;
     
 
-mainImagen.innerHTML += elementTitle;
+mainImagen.innerHTML += elementIndex;
 }
 }
 showFilms(films)
 
 
+// const posterTitle = document.querySelector(".posterTitle")
+
+// posterTitle.addEventListener("click",function(){
+//   function showFilms(element){
+//     mainImagen.innerHTML= "";
+//     for (const film of element){
+//       const elementIndex = `
+//       <div id="divCard" class="film">
+//           <div class="container">
+//               <div class="face">
+//                 <div class="posterTitle">
+//                   <h2>${film.title}</h2>
+//                   <img class="face" alt="Film poster" src="${film.poster}"/>
+//                 </div>
+//               </div>
+//               <div class="info">
+//                 <div>
+//                   <p class="infoSecond"><h3>Descripción:</h3><br> ${film.description}</p>
+//                 </div>
+//               </div>
+//           </div>
+//       </div>`;
+//   mainImagen.innerHTML += elementIndex;
+//   }
+//   }
+//   showFilms(films)
+  
+// })
+
 const posterTitle = document.querySelector(".posterTitle")
-// const face = document.getElementById("face")
+
 posterTitle.addEventListener("click",function(){
   function showFilms(element){
     mainImagen.innerHTML= "";
     for (const film of element){
-      const elementTitle = `
+      const elementIndex = `
       <div id="divCard" class="film">
           <div class="container">
               <div class="face">
@@ -60,12 +91,12 @@ posterTitle.addEventListener("click",function(){
               </div>
               <div class="info">
                 <div>
-                  <p class="infoSecond">Descripción: ${film.description}</p>
+                  <p class="infoSecond"><h3>Descripción:</h3><br> ${film.description}</p>
                 </div>
               </div>
           </div>
       </div>`;
-  mainImagen.innerHTML += elementTitle;
+  mainImagen.innerHTML += elementIndex;
   }
   }
   showFilms(films)
@@ -96,51 +127,61 @@ date.addEventListener("change",(event)=>{
   showFilms(filteredDate);
 });
 
-const btnReseña = document.getElementById("btnReseña")
+let btnReseña = document.getElementById("btnReseña")
+let imagen = document.getElementById("imagen")
 
-btnReseña.addEventListener("click",function(){
+let reseña = document.getElementById("reseña")
+let imgCuadro = document.getElementById("imgCuadro")
 
+btnReseña.addEventListener("click",function(){ 
+  imagen.style.display="none"
+  imgCuadro.style.display="block"
+  reseña.style.display="block"
+  containerA.style.display="block"
 })
 
-// let directorProducer = result;
+let btnAnimaciones = document.getElementById("btnAnimaciones")
+
+btnAnimaciones.addEventListener("click",function(){ 
+  imgCuadro.style.display="none"
+  reseña.style.display="none"
+  containerA.style.display="none"
+  imagen.style.display="block"
+  
+})
+
+
+
+
+
+
+// const especie = 'Cat'
 // let imagen=document.getElementById("imagen")
 
 
-/// PERSONAJES MOSTRADOS EN PANTALLA ///
-
-// import data from './data/ghibli/ghibli.js';
-// import {obtenerPersonajes} from './data.js';
-// import {ordenarPersonajes} from './data.js';
-// import {filtrarPersonajes} from './data.js';
-
-
-const especie = 'Cat'
-let imagen=document.getElementById("imagen")
-
-
 /// PERSONAJES EN PANTALLA///
-const personajes = obtenerPersonajes(films)
-for (let i = 0 ; i< personajes.length ; i++){
-    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
-  }
-console.log('personajes mostrados')
+// const personajes = obtenerPersonajes(films)
+// for (let i = 0 ; i< personajes.length ; i++){
+//     imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+//   }
+// console.log('personajes mostrados')
 
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
 // no ordena aun
-ordenarPersonajes(personajes)
-for(let i=0 ; i< personajes.length; i++){
-    imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
-  }
-console.log('personajes ordenados mostrados')
+// ordenarPersonajes(personajes)
+// for(let i=0 ; i< personajes.length; i++){
+//     imagen.innerHTML+=`<div>${personajes[i].name} <img src='${personajes[i].img}'> </div>`;
+//   }
+// console.log('personajes ordenados mostrados')
 
 
 /// PERSONAJES FILTRADOS EN PANTALLA ///
-const personajes_filtrado = filtrarPersonajes(personajes,especie)
-for(let i=0 ; i< personajes_filtrado.length; i++){
-  imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
-}
-console.log('personajes filtrados mostrados')
+// const personajes_filtrado = filtrarPersonajes(personajes,especie)
+// for(let i=0 ; i< personajes_filtrado.length; i++){
+//   imagen.innerHTML+=`<div>${personajes_filtrado[i].name} <img src='${personajes_filtrado[i].img}'> </div>`;
+// }
+// console.log('personajes filtrados mostrados')
 
 
 

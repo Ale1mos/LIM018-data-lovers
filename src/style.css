@@ -107,10 +107,7 @@ a{
 .info{
   border-radius: 10px;
   /* filter: drop-shadow(7px 10px 10px gray); */
-  /* opacity: 0.8; */
   background-color: rgba(192, 185, 185, 0.7);
-
-  /* width: 550px; */
   height: 200px;
   padding: 17px;
   margin-top: 125px;
@@ -120,16 +117,46 @@ a{
   justify-content: center;
   align-items: center;
   box-shadow: 10px 10px 10px;
-
-  /* margin: 2rem auto; */
-  /* border: 1px solid #aaa; */
   height: 300px;
   width:90%;
   max-width: 550px;
-  /* background: #f1f2f3; */
   overflow:auto;
   box-sizing: border-box;
-  /* padding:0 1rem; */
+}
+.containerReseña{
+  display: flex;
+  background-color: rgba(192, 185, 185, 0.7);
+  /* box-shadow: 10px 10px 10px; */
+  border-radius: 7px;
+  margin: 10px;
+}
+.infoReseña{
+  border: solid rgb(70, 67, 67);
+    /* box-shadow: 10px 10px 10px; */
+  width: 700px;
+  height: 470px;
+  margin: 90px;
+  margin-right: 10px;
+}
+#reseña h1{
+  font-size: xx-large;
+  padding: 10px;
+
+}
+#reseña p{
+  text-align: justify;
+  padding: 10px;
+}
+#imgCuadro{
+  /* margin: auto; */
+  /* margin: 70px; */
+  /* margin-left: 5px; */
+  margin: 10%;
+  /* margin-top: 50px; */
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 15px 15px 15px;
+
 }
 
 .info p{
@@ -146,6 +173,8 @@ a{
 .infoSecond{
   border: solid yellowgreen;
 }
+
+
 
 /* .info .infoFirst{
   display: flex;
@@ -207,6 +236,7 @@ select{
   height: 30px;
   cursor: pointer; 
 }
+
 /* .personajes{
   border: solid blue;
   width: 250px;
