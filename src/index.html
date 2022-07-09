@@ -10,6 +10,8 @@
 
 <body>
     <div id="root"></div>
+
+
     <!-- Sección del menú -->
     <section class="menu">
       <div id="menuContainer">
@@ -28,6 +30,7 @@
         </nav>
       </div>
     </section>
+
 
     <!-- Sección animaciones -->
     <section class="animation" id="animaciones">
@@ -111,20 +114,20 @@
       </div>
     </section>
 
+
     <!-- Seccion personajes -->
     <section class="character" id="personajes">
-      <div class="character_container">
-        <h3 class="character_title">Personajes</h3>
-        <div class="filterSearch">
-          <div class="filters" id="filterSort">
+      <div class="characterContainer">
+        <h3 class="characterTitle">Personajes</h3>
+        <div class="characterFilterSearch">
+          <div class="characterFilters" id="filterSort">
             <select class="select" id="sortCharacter">
               <option selected disabled value="">Ordenar por</option>
               <option value="A-Z">A-Z</option>
               <option value="Z-A">Z-A</option>
             </select>
           </div>
-
-          <div class="filters" id="filterGender">
+          <div class="characterFilters" id="filterGender">
             <select class="select" id="gender">
               <option value="">Género</option>
               <option value="Female">Female</option>
@@ -133,8 +136,7 @@
               <option value="Unknown">Unknown</option>
             </select>
           </div>
-
-          <div class="filters" id="filterSpecie">
+          <div class="characterFilters" id="filterSpecie">
             <select class="select" id="specie">
               <option value="">Especie</option>
               <option value="Arch-mage/Human">Arch-mage/Human</option>
@@ -162,18 +164,19 @@
           </div>
         </div>  
 
-        <div class="charsCount" id="charsCountDiv"></div>
+        <div class="characterCount" id="charsCountDiv"></div>
 
-        <main id="characterCards" class="mainCards">
+        <main class="characterMainCards" id="characterCards">
         </main>
       </div>
     </section>
+
 
     <!-- Sección locaciones -->
     <section class="location" id="locaciones">
       <div class="location_container">
         <h3 class="location_title">Locaciones</h3>
-        <div class="filterSearch">
+        <div class="location_filterSearch">
           <div class="filters" id="filterSort">
             <select class="select" id="sortLocation">
               <option selected disabled value="">Sort by</option>
@@ -205,6 +208,7 @@
         </main>
       </div>
     </section>
+
 
     <!-- Referencia archivo main javascript -->
     <script src="main.js" type="module"></script>

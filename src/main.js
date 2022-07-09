@@ -109,11 +109,6 @@ btnReseña.addEventListener("click",function(){
 
 ///----PERSONAJES------///
 
-// import data from './data/ghibli/ghibli.js';
-// import {obtenerPersonajes} from './data.js';
-// import {ordenarPersonajes} from './data.js';
-// import {filtrarPersonajes} from './data.js';
-// const especie = 'Cat'
 let characterCards=document.getElementById("characterCards")
 let sortCharacter=document.getElementById("sortCharacter")
 let gender=document.getElementById('gender')
@@ -122,7 +117,15 @@ let specie=document.getElementById('specie')
 function showCharacter(element){
   characterCards.innerHTML= "";
   for(let i=0 ; i< element.length; i++){
-    characterCards.innerHTML+=`<div class='card'><ul> <li>${element[i].name}</li> <li><img src='${element[i].img}'></li> </ul></div>`;
+    characterCards.innerHTML+=`<div class='card'>
+    <ul>
+    <li><img src='${element[i].img}'></li>
+    <li>${element[i].name}</li>
+    <li>${element[i].age}</li>
+    <li>${element[i].gender}</li>
+    <li>${element[i].specie}</li>
+    </ul>
+    </div>`;
   }
 }
 
