@@ -60,11 +60,16 @@ export const filtrarEspecie = (personajes,especie) => {
   return personajes_filtrado
 }
 
-export const filtrarGenero = (personajes,genero) => {
-  const personajes_filtrado = personajes.filter(personajes => personajes.gender == genero);
-  console.log('personajes filtrados',personajes_filtrado)
-  return personajes_filtrado
-}
+// export const filtrarGenero = (personajes,genero) => {
+//   const personajes_filtrado = personajes.filter(personajes => personajes.gender == genero);
+//   console.log('personajes filtrados',personajes_filtrado)
+//   return personajes_filtrado
+// }
+
+export const quantity = (personajes) => {
+  const total = personajes.length;
+  return total;
+};
 
 
 
