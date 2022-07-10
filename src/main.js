@@ -107,7 +107,7 @@ btnReseña.addEventListener("click",function(){
 
 
 
-///-------PERSONAJES------///
+///-------PERSONAJES-------///
 
 let characterCards=document.getElementById("characterCards")
 let sortCharacter=document.getElementById("sortCharacter")
