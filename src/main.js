@@ -2,21 +2,23 @@ import data from './data/ghibli/ghibli.js';
 /// PERSONAJES DE LAS PELICULAS /// 
 import {ordenarAZ,filterDirector,filtering,obtenerPersonajes,ordenarPersonajes,filtrarGenero,filtrarEspecie} from './data.js';
 
+
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
 const films = data.films
 // ordenarAZ(films)
 // console.log(films)
 
-// const btnReseña =document.getElementById("btnReseña")
-// btnReseña.style.display="none"
+
+const containerA = document.getElementById("containerA")
+containerA.style.display="none"
 
 const mainImagen = document.querySelector(".mainImagen")
 
 function showFilms(element){
   mainImagen.innerHTML= "";
   for (const film of element){
-    const elementTitle = `
+    const elementIndex = `
     <div id="divCard" class="film">
         <div class="container">
             <div class="face">
@@ -37,19 +39,48 @@ function showFilms(element){
     </div>`;
     
 
-mainImagen.innerHTML += elementTitle;
+mainImagen.innerHTML += elementIndex;
 }
 }
 showFilms(films)
 
 
+// const posterTitle = document.querySelector(".posterTitle")
+
+// posterTitle.addEventListener("click",function(){
+//   function showFilms(element){
+//     mainImagen.innerHTML= "";
+//     for (const film of element){
+//       const elementIndex = `
+//       <div id="divCard" class="film">
+//           <div class="container">
+//               <div class="face">
+//                 <div class="posterTitle">
+//                   <h2>${film.title}</h2>
+//                   <img class="face" alt="Film poster" src="${film.poster}"/>
+//                 </div>
+//               </div>
+//               <div class="info">
+//                 <div>
+//                   <p class="infoSecond"><h3>Descripción:</h3><br> ${film.description}</p>
+//                 </div>
+//               </div>
+//           </div>
+//       </div>`;
+//   mainImagen.innerHTML += elementIndex;
+//   }
+//   }
+//   showFilms(films)
+  
+// })
+
 const posterTitle = document.querySelector(".posterTitle")
-// const face = document.getElementById("face")
+
 posterTitle.addEventListener("click",function(){
   function showFilms(element){
     mainImagen.innerHTML= "";
     for (const film of element){
-      const elementTitle = `
+      const elementIndex = `
       <div id="divCard" class="film">
           <div class="container">
               <div class="face">
@@ -60,12 +91,12 @@ posterTitle.addEventListener("click",function(){
               </div>
               <div class="info">
                 <div>
-                  <p class="infoSecond">Descripción: ${film.description}</p>
+                  <p class="infoSecond"><h3>Descripción:</h3><br> ${film.description}</p>
                 </div>
               </div>
           </div>
       </div>`;
-  mainImagen.innerHTML += elementTitle;
+  mainImagen.innerHTML += elementIndex;
   }
   }
   showFilms(films)
@@ -96,14 +127,43 @@ date.addEventListener("change",(event)=>{
   showFilms(filteredDate);
 });
 
-const btnReseña = document.getElementById("btnReseña")
+let btnReseña = document.getElementById("btnReseña")
+let animaciones = document.getElementById("animaciones")
 
-btnReseña.addEventListener("click",function(){
+let reseña = document.getElementById("reseña")
+let imgCuadro = document.getElementById("imgCuadro")
 
+let personajes_id = document.getElementById('personajes')
+let locaciones = document.getElementById('locaciones')
+
+btnReseña.addEventListener("click",function(){ 
+  animaciones.style.display="none"
+  personajes_id.style.display="none"
+  locaciones.style.display ="none"
+  imgCuadro.style.display="block"
+  reseña.style.display="block"
+  containerA.style.display="block"
 })
 
-// let directorProducer = result;
-// let imagen=document.getElementById("imagen")
+let btnAnimaciones = document.getElementById("btnAnimaciones")
+
+btnAnimaciones.addEventListener("click",function(){ 
+  imgCuadro.style.display="none"
+  reseña.style.display="none"
+  containerA.style.display="none"
+  animaciones.style.display="block"
+  personajes_id.style.display="none"
+  locaciones.style.display ="none"
+})
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,8 +173,8 @@ let characterCards=document.getElementById("characterCards")
 let sortCharacter=document.getElementById("sortCharacter")
 let gender=document.getElementById('gender')
 let specie=document.getElementById('specie')
-let animaciones = document.getElementById('animaciones')
-let locaciones = document.getElementById('locaciones')
+// let animaciones = document.getElementById('animaciones')
+// let locaciones = document.getElementById('locaciones')
 
 
 function showCharacter(element){
