@@ -123,6 +123,64 @@ btnAnimaciones.addEventListener("click",function(){
   
 })
 
+///-------PERSONAJES-------///
+
+let characterCards=document.getElementById("characterCards")
+let sortCharacter=document.getElementById("sortCharacter")
+let gender=document.getElementById('gender')
+let specie=document.getElementById('specie')
+let animaciones = document.getElementById('animaciones')
+let locaciones = document.getElementById('locaciones')
+
+
+function showCharacter(element){
+  characterCards.innerHTML= "";
+  for(let i=0 ; i< element.length; i++){
+    characterCards.innerHTML+=`<div class='card'>
+    <ul>
+    <li><img src='${element[i].img}'></li>
+    <li>${element[i].name}</li>
+    <li>${element[i].age}</li>
+    <li>${element[i].gender}</li>
+    <li>${element[i].specie}</li>
+    </ul>
+    </div>`;
+  }
+}
+
+const personajes = obtenerPersonajes(films)
+
+function showSection(section1,section2){
+  section1.style.display ='none'
+  section2.style.display ='none'
+}
+
+
+/// PERSONAJES EN PANTALLA ///
+// showSection(animaciones,locaciones)
+showCharacter(personajes)
+
+/// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
+sortCharacter.addEventListener("change",(event)=>{
+  // const selectedSort = event.target.value;
+  // const filteredSort = ordenarPersonajes(personajes);
+  ordenarPersonajes(personajes);
+  showCharacter(personajes);
+});
+
+/// PERSONAJES FILTRADOS EN PANTALLA ///
+gender.addEventListener("change",(event)=>{
+  const selectedGender = event.target.value;
+  const filteredGender = filtrarGenero(personajes, selectedGender);
+  showCharacter(filteredGender);
+});
+
+specie.addEventListener("change",(event)=>{
+  const selectedSpecie = event.target.value;
+  const filteredSpecie = filtrarEspecie(personajes, selectedSpecie);
+  showCharacter(filteredSpecie);
+});
+
 
 
 

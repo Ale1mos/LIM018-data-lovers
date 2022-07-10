@@ -252,3 +252,65 @@ select{
   height: 360px;
  
 } */
+
+
+
+/* ----personajes---- */
+
+.character{
+  margin: 64px 100px;
+}
+
+.characterContainer{
+  background-color: #be2e2e;
+}
+
+.characterTitle{
+  font-size: 32px;
+  text-align: center;
+}
+
+.characterFilterSearch{
+  background-color: #797979;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.characterMainCards{
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}   
+
+section.character div.card{
+  background-color: #f67921;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 16px; 
+  background-color: white;
+  margin: 22px 15px 22px 0px;
+}
+
+section.character div.card ul{
+  margin: 0;
+  padding: 0;
+  font-weight: 600; 
+  font-size: 16px;
+  text-align: center;
+}
+
+
+
+section.location{
+  background-color: #4177ae;
+}
+
+
+
+
+

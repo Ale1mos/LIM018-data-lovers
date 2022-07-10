@@ -30,6 +30,8 @@ export const filterDirector = (films,nameDirector) => {
 let imagen=document.getElementById("imagen")
 
 
+// ---- FUNCIONES PERSONAJES ------- //
+
 export const obtenerPersonajes = (films) => {
   let personajes = [];
   console.log('peliculas',films)
