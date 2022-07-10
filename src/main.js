@@ -1,7 +1,7 @@
 
 import data from './data/ghibli/ghibli.js';
 
-import {ordenarAZ,filterDirector,filtering,obtenerPersonajes,ordenarPersonajes,filtrarPersonajes} from './data.js';
+import {ordenarAZ,filtering} from './data.js';
 
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
@@ -45,34 +45,7 @@ mainImagen.innerHTML += elementIndex;
 showFilms(films)
 
 
-// const posterTitle = document.querySelector(".posterTitle")
 
-// posterTitle.addEventListener("click",function(){
-//   function showFilms(element){
-//     mainImagen.innerHTML= "";
-//     for (const film of element){
-//       const elementIndex = `
-//       <div id="divCard" class="film">
-//           <div class="container">
-//               <div class="face">
-//                 <div class="posterTitle">
-//                   <h2>${film.title}</h2>
-//                   <img class="face" alt="Film poster" src="${film.poster}"/>
-//                 </div>
-//               </div>
-//               <div class="info">
-//                 <div>
-//                   <p class="infoSecond"><h3>Descripción:</h3><br> ${film.description}</p>
-//                 </div>
-//               </div>
-//           </div>
-//       </div>`;
-//   mainImagen.innerHTML += elementIndex;
-//   }
-//   }
-//   showFilms(films)
-  
-// })
 
 const posterTitle = document.querySelector(".posterTitle")
 
