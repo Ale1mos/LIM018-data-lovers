@@ -29,7 +29,7 @@ export const filterDirector = (films,nameDirector) => {
 
 
 
-// ---- FUNCIONES PERSONAJES ---- //
+// ---- FUNCIONES PERSONAJES ------- //
 
 export const obtenerPersonajes = (films) => {
   let personajes = [];
