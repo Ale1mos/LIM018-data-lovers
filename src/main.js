@@ -113,6 +113,9 @@ let characterCards=document.getElementById("characterCards")
 let sortCharacter=document.getElementById("sortCharacter")
 let gender=document.getElementById('gender')
 let specie=document.getElementById('specie')
+let animaciones = document.getElementById('animaciones')
+let locaciones = document.getElementById('locaciones')
+
 
 function showCharacter(element){
   characterCards.innerHTML= "";
@@ -131,7 +134,14 @@ function showCharacter(element){
 
 const personajes = obtenerPersonajes(films)
 
+function showSection(section1,section2){
+  section1.style.display ='none'
+  section2.style.display ='none'
+}
+
+
 /// PERSONAJES EN PANTALLA ///
+// showSection(animaciones,locaciones)
 showCharacter(personajes)
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
