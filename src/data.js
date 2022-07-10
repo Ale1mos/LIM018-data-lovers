@@ -27,7 +27,6 @@ export const filterDirector = (films,nameDirector) => {
 
 
 
-let imagen=document.getElementById("imagen")
 
 
 // ---- FUNCIONES PERSONAJES ------- //
@@ -40,8 +39,7 @@ export const obtenerPersonajes = (films) => {
   }
   console.log('personajes',personajes)
   return personajes;
-};
-
+}
 
 export const ordenarPersonajes = (personajes) => {
   personajes.sort((a,b) =>{
@@ -56,9 +54,14 @@ export const ordenarPersonajes = (personajes) => {
   console.log('personajes ordenados',personajes)
 }
 
-
-export const filtrarPersonajes = (personajes,especie) => {
+export const filtrarEspecie = (personajes,especie) => {
   const personajes_filtrado = personajes.filter(personajes => personajes.specie == especie);
+  console.log('personajes filtrados',personajes_filtrado)
+  return personajes_filtrado
+}
+
+export const filtrarGenero = (personajes,genero) => {
+  const personajes_filtrado = personajes.filter(personajes => personajes.gender == genero);
   console.log('personajes filtrados',personajes_filtrado)
   return personajes_filtrado
 }

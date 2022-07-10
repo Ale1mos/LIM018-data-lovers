@@ -1,7 +1,7 @@
-
 import data from './data/ghibli/ghibli.js';
+/// PERSONAJES DE LAS PELICULAS /// 
+import {ordenarAZ,filtering,obtenerPersonajes,ordenarPersonajes,filtrarGenero,filtrarEspecie} from './data.js';
 
-import {ordenarAZ,filtering} from './data.js';
 
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
@@ -45,7 +45,34 @@ mainImagen.innerHTML += elementIndex;
 showFilms(films)
 
 
+// const posterTitle = document.querySelector(".posterTitle")
 
+// posterTitle.addEventListener("click",function(){
+//   function showFilms(element){
+//     mainImagen.innerHTML= "";
+//     for (const film of element){
+//       const elementIndex = `
+//       <div id="divCard" class="film">
+//           <div class="container">
+//               <div class="face">
+//                 <div class="posterTitle">
+//                   <h2>${film.title}</h2>
+//                   <img class="face" alt="Film poster" src="${film.poster}"/>
+//                 </div>
+//               </div>
+//               <div class="info">
+//                 <div>
+//                   <p class="infoSecond"><h3>Descripción:</h3><br> ${film.description}</p>
+//                 </div>
+//               </div>
+//           </div>
+//       </div>`;
+//   mainImagen.innerHTML += elementIndex;
+//   }
+//   }
+//   showFilms(films)
+  
+// })
 
 const posterTitle = document.querySelector(".posterTitle")
 
@@ -101,13 +128,18 @@ date.addEventListener("change",(event)=>{
 });
 
 let btnReseña = document.getElementById("btnReseña")
-let imagen = document.getElementById("imagen")
+let animaciones = document.getElementById("animaciones")
 
 let reseña = document.getElementById("reseña")
 let imgCuadro = document.getElementById("imgCuadro")
 
+let personajes_id = document.getElementById('personajes')
+let locaciones = document.getElementById('locaciones')
+
 btnReseña.addEventListener("click",function(){ 
-  imagen.style.display="none"
+  animaciones.style.display="none"
+  personajes_id.style.display="none"
+  locaciones.style.display ="none"
   imgCuadro.style.display="block"
   reseña.style.display="block"
   containerA.style.display="block"
@@ -119,9 +151,21 @@ btnAnimaciones.addEventListener("click",function(){
   imgCuadro.style.display="none"
   reseña.style.display="none"
   containerA.style.display="none"
-  imagen.style.display="block"
-  
+  animaciones.style.display="block"
+  personajes_id.style.display="none"
+  locaciones.style.display ="none"
 })
+
+
+
+
+
+
+
+
+
+
+
 
 ///-------PERSONAJES-------///
 
@@ -129,8 +173,8 @@ let characterCards=document.getElementById("characterCards")
 let sortCharacter=document.getElementById("sortCharacter")
 let gender=document.getElementById('gender')
 let specie=document.getElementById('specie')
-let animaciones = document.getElementById('animaciones')
-let locaciones = document.getElementById('locaciones')
+// let animaciones = document.getElementById('animaciones')
+// let locaciones = document.getElementById('locaciones')
 
 
 function showCharacter(element){

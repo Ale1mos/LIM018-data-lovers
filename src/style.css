@@ -212,6 +212,7 @@ a{
 
 #options{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   /* border: solid rgb(136, 67, 226) 7px; */
   border: solid rgb(0, 0, 0);
@@ -236,22 +237,6 @@ select{
   height: 30px;
   cursor: pointer; 
 }
-
-/* .personajes{
-  border: solid blue;
-  width: 250px;
-  height: 360px;
-}
-.personajes h3{
-  border: solid rgb(0, 255, 30);
-  color: brown;
-}
-.personajes img{
-  border: solid blue;
-  width: 250px;
-  height: 360px;
- 
-} */
 
 
 
