@@ -2,12 +2,10 @@
 
 import { obtenerPersonajes,ordenarAZ } from '../src/data.js';
 
-const mockData = {
-  "studio": "Studio Ghibli Inc.",
-  "films": [
+const mockData =  [
     {
       "id": "2baf70d1-42bb-4437-b551-e5fed5a87abe",
-      "title": "Zastle in the Sky",
+      "title": "Castle in the Sky",
       "description": "The orphan Sheeta inherited a mysterious crystal that links her to the mythical sky-kingdom of Laputa. With the help of resourceful Pazu and a rollicking band of sky pirates, she makes her way to the ruins of the once-great civilization. Sheeta and Pazu must outwit the evil Muska, who plans to use Laputa's science to make himself ruler of the world.",
       "director": "Hayao Miyazaki",
       "producer": "Isao Takahata",
@@ -483,7 +481,7 @@ const mockData = {
     },
     {
       "id": "12cfb892-aac0-4c5b-94af-521852e46d6a",
-      "title": "Arave of the Fireflies",
+      "title": "Grave of the Fireflies",
       "description": "In the latter part of World War II, a boy and his sister, orphaned when their mother is killed in the firebombing of Tokyo, are left to survive on their own in what remains of civilian life in Japan. The plot follows this boy and his sister as they do their best to survive in the Japanese countryside, battling hunger, prejudice, and pride in their own quiet, personal battle.",
       "director": "Isao Takahata",
       "producer": "Toru Hara",
@@ -546,7 +544,49 @@ const mockData = {
       "vehicles": []
     }
   ]
-}
+
+
+describe('ordenarAZ', () => {
+  it('is a function', () => {
+    expect(typeof ordenarAZ).toBe('function');
+  });
+  it('retorna la data ordenada', () => {
+    // dado de la A la Z
+    const mockOrder= "A-Z"
+    // cuando
+    const sort =ordenarAZ(mockData,mockOrder)
+    // const expectedArray = "films": [{}]
+    // entonces;
+    expect(sort[0].title).toBe('Castle in the Sky')
+    expect(sort[1].title).toBe('Grave of the Fireflies')
+    expect(sort[2].title).toBe("Kiki's Delivery Service")
+    expect(sort[3].title).toBe('My Neighbor Totoro')
+
+
+  });
+  
+});
+
+describe('ordenarAZ', () => {
+  it('is a function', () => {
+    expect(typeof ordenarAZ).toBe('function');
+  });
+  it('retorna la data ordenada', () => {
+    // dado de la A la Z
+    const mockOrder= "Z-A"
+    // cuando
+    const sort =ordenarAZ(mockData,mockOrder)
+    // const expectedArray = "films": [{}]
+    // entonces;
+    expect(sort[0].title).toBe('My Neighbor Totoro')
+    expect(sort[1].title).toBe("Kiki's Delivery Service")
+    expect(sort[2].title).toBe('Grave of the Fireflies')
+    expect(sort[3].title).toBe('Castle in the Sky')
+
+
+  });
+  
+});
 
 // const arreglo = [{specie: 'Cat'},{specie: 'pizza'}]
 
@@ -561,20 +601,7 @@ const mockData = {
 // });
 // const _mockData ={"films": [{"title": "Castle"}],[{"title": "Totoro"}],[{"title": "Kiki"}]}
 
-describe('ordenarAZ', () => {
-  it('is a function', () => {
-    expect(typeof ordenarAZ).toBe('function');
-  });
-  it('retorna la data ordenada', () => {
-    // dado de la A la Z
-    const mockOrder= "A-Z"
-    // cuando
-    const sort =ordenarAZ(mockData,mockOrder)
-    // entonces;
-    expect(sort.films[3].title).toBe('Zastle in the Sky')
-  });
-  
-});
+
 
 
 
