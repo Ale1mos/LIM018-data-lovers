@@ -3,11 +3,13 @@ import data from './data/ghibli/ghibli.js';
 import {ordenarAZ,filtering,obtenerPersonajes,ordenarPersonajes,filtrarEspecie, quantity} from './data.js';
 
 
+
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
 const films = data.films
 // ordenarAZ(films)
 // console.log(films)
+
 
 
 const id_reseña = document.getElementById("id_reseña")
@@ -16,6 +18,8 @@ let personajes_id = document.getElementById('personajes')
 personajes_id.style.display="none"
 let locaciones = document.getElementById('locaciones')
 locaciones.style.display ="none"
+
+
 
 const mainImagen = document.querySelector(".mainImagen")
 
@@ -47,8 +51,6 @@ mainImagen.innerHTML += elementIndex;
 }
 }
 showFilms(films)
-
-
 
 
 const posterTitle = document.querySelector(".posterTitle")
@@ -109,9 +111,8 @@ let animaciones = document.getElementById("animaciones")
 
 let reseña = document.getElementById("reseña")
 let imgCuadro = document.getElementById("imgCuadro")
-
-
-
+let personajes_id = document.getElementById('personajes')
+let locaciones = document.getElementById('locaciones')
 
 
 btnReseña.addEventListener("click",function(){ 
@@ -140,6 +141,26 @@ btnPersonajes.addEventListener("click",function(){
   locaciones.style.display ="none"
   personajes_id.style.display="block"
 })
+
+
+let btnAnimaciones = document.getElementById("btnAnimaciones")
+
+btnAnimaciones.addEventListener("click",function(){ 
+  imgCuadro.style.display="none"
+  reseña.style.display="none"
+  containerA.style.display="none"
+  animaciones.style.display="block"
+  personajes_id.style.display="none"
+  locaciones.style.display ="none"
+})
+
+
+
+
+
+
+
+
 
 
 
