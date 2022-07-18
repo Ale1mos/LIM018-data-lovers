@@ -1,6 +1,6 @@
 // import { filtrarPersonajes } from '../src/data.js';
 
-import { obtenerPersonajes,ordenarAZ } from '../src/data.js';
+import { obtenerPersonajes,ordenarAZ,filtering,ordenarPersonajes } from '../src/data.js';
 
 const mockData =  [
     {
@@ -588,6 +588,31 @@ describe('ordenarAZ', () => {
   
 });
 
+
+describe('filtering', () => {
+  it('is a function', () => {
+    expect(typeof filtering).toBe('function');
+  });
+  it('retorna la data filtrada', () => {
+    
+    const sort =filtering(mockData,"director","Hayao Miyazaki")
+    // const expectedArray = "films": [{}]
+    // entonces;
+    expect(sort[0].director).toBe("Hayao Miyazaki")
+    expect(sort[1].director).toBe("Hayao Miyazaki")
+    expect(sort[2].director).toBe("Hayao Miyazaki")  
+
+  });
+
+  // it('deberia retornar un error', () => {
+    
+  //   const filter = (filtering( null ,"director","Hayao Miyazaki"))
+    
+  //   expect(() => filter).toThrow(TypeError);
+  // });
+})
+
+
 // const arreglo = [{specie: 'Cat'},{specie: 'pizza'}]
 
 // describe('filtrarPersonajes', () => {
@@ -624,6 +649,24 @@ describe('obtenerPersonajes', () => {
 //   expect(personajes).toEqual
 // expect(obtenerPersonajes(films)).toEqual([{'name': 'B'},{'name': 'A'}]);
 
+/// Tests funciones personajes //////
+
+
+
+
+describe('probando ordenarPersonajes', () =>{
+  it('is a function', () => {
+    expect(typeof ordenarPersonajes).toBe('function');
+  });
+  it('ordena personajes',()=>{
+    // Dado
+    const personajes = [{'name': 'B'},{'name': 'A'}]
+    // Cuando
+    ordenarPersonajes(personajes)
+    // Entonces
+    expect(personajes).toEqual([{'name': 'A'},{'name': 'B'}])
+  })
+})
 
 
 

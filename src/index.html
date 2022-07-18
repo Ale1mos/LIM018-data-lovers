@@ -9,28 +9,22 @@
 </head>
 
 <body>
-    <div id="root"></div>
-
-
     <!-- Sección del menú -->
     <section class="menu">
       <div id="menuContainer">
-
         <figure class="figureBanner">
           <img  src="./images/banner1.jpg" alt="">
         </figure>
-
         <nav>
           <ul id="menu">
-            <a id="btnReseña" href="#id_reseña">RESEÑA</a>
-            <a id="btnAnimaciones" href="#animaciones">ANIMACIONES</a>
-            <a id="btnPersonajes" href="#personajes">PERSONAJES</a>
-            <a href="#locaciones">LOCACIONES</a>
+            <a id="btnReseña" href="#">RESEÑA</a>
+            <a id="btnAnimaciones" href="#">ANIMACIONES</a>
+            <a id="menu_personajes" href="#">PERSONAJES</a>
+            <a id="menu_locaciones" href="#">LOCACIONES</a>
           </ul>
         </nav>
       </div>
     </section>
-
 
     <!-- Sección animaciones -->
     <section class="animation" id="animaciones">
@@ -43,7 +37,6 @@
               <option value="Z-A">Z-A</option>
             </select>
           </div>
-
           <div>
             <select id="director" class="itemSelect">
               <option selected disabled value="">Director</option>
@@ -55,7 +48,6 @@
               <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
             </select>
           </div>
-
           <div>
             <select id="producer" class="itemSelect">
               <option selected disabled value="">Productor</option>
@@ -66,7 +58,6 @@
               <option value="Yoshiaki Nishimura">Yoshiaki Nishimura</option>      
             </select>
           </div>
-
           <div>
             <select id="date" class="itemSelect">
               <option selected disabled value="">Lanzamiento</option>
@@ -91,12 +82,12 @@
             </select>
           </div>
         </div>
-
-        <br><br>
+        
+        <div id="filmsCountDiv" class="filmsCountDiv"></div>
+        <div id="containerPlus"><img id="plus" src="./images/plus.jpg" alt=""></div>
         <main id="imagen" class="mainImagen"></main>
       </div>
     </section>
-
 
     <!-- Sección reseña  -->
     <section class="reseña" id="id_reseña">
@@ -108,14 +99,10 @@
                 <h1>Historia</h1>
                 <br>
                 <p>
-                Considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad, Estudio Ghibli se abrió paso el 15 de junio de 1985 tras el rotundo éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984), con sus largometrajes animados y también con la producción varios cortometrajes, comerciales de televisión y una película para televisión. 
-                
+                  Considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad, Estudio Ghibli se abrió paso con sus largometrajes animados y también con la producción de varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por el galardonado y reputado Hayao Miyazaki e Isao Takahata, su colega y mentor y el productor Toshio Suzuki , tras el rotundo éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984).
                 </p>
-                <br>
                 <p>
-                Fue fundado por el galardonado y reputado Hayao Miyazaki, nació en 1941 en Tokio. De joven solía dibujar, aunque como pasatiempo. Del cine animado, más que Disney o la animación japonesa de entonces, lo marcaron obras como "El rey y el pájaro" (Paul Grimault, Francia, 1948) "La reina de las nieves" (Atamanov, Rusia, 1957) y los hermanos Fleischer. Estudió ciencias políticas y economía. Tras graduarse, ingresó en 1963 al estudio de animación Toei, y trabajó como auxiliar de dibujo, mayormente para series de TV. Allí conoció a Takahata.
-    
-                Isao Takahata, 6 años mayor, ya llevaba algunos años en el estudio, en roles de mayor relevancia. En 1964 Miyazaki encabezó un movimiento sindical en el estudio, secundado por Takahata. Allí se cimentó la amistad de los futuros creadores de Ghibli; también allí Miyazaki conoció a su futura esposa, con quien se casó al año siguiente.
+                  Así se abrió paso Studio Ghibli, dejándonos entre sus grandes enseñanzas el de dar la debida importancia a los pequeños detalles o momentos: un rayo de sol, el sonido de un río, una flor mecida por el viento… Y esto, nos lleva a otra de las lecciones de las creaciones de Studio Ghibli, el respeto por la naturaleza y los animales, además de los muchos mensajes sociales que incluyen las películas.
                 </p>
               </div>
             </div>
@@ -128,21 +115,18 @@
     
         <div class="containerReseña">
           <div>
-            <img id="imgCuadro" src="./images/cuadro_1.jpg" alt="">
+            <img id="imgCuadro" src="./images/cuadro_2.jpg" alt="">
           </div>
           <section class="infoReseña">
             <div id="reseña">
               <div>
-                <h1>Historia</h1>
+                <h1>Fundadores</h1>
                 <br>
                 <p>
-                Considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad, Estudio Ghibli se abrió paso con sus largometrajes animados y también con la producción varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por el galardonado y reputado Hayao Miyazaki e Isao Takahata, su colega y mentor y el productor Toshio Suzuki , tras el rotundo éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984).
+                  Fue fundado por el galardonado y reputado Hayao Miyazaki, nació en 1941 en Tokio. De joven solía dibujar, aunque como pasatiempo. Del cine animado, más que Disney o la animación japonesa de entonces, lo marcaron obras como "El rey y el pájaro" (Paul Grimault, Francia, 1948) "La reina de las nieves" (Atamanov, Rusia, 1957) y los hermanos Fleischer. Estudió ciencias políticas y economía. Tras graduarse, ingresó en 1963 al estudio de animación Toei, y trabajó como auxiliar de dibujo, mayormente para series de TV. Allí conoció a Takahata.
                 </p>
-                <br>
                 <p>
-                Hayao Miyazaki nació en 1941 en Tokio. De joven solía dibujar, aunque como pasatiempo. Del cine animado, más que Disney o la animación japonesa de entonces, lo marcaron obras como "El rey y el pájaro" (Paul Grimault, Francia, 1948) "La reina de las nieves" (Atamanov, Rusia, 1957) y los hermanos Fleischer. Estudió ciencias políticas y economía. Tras graduarse, ingresó en 1963 al estudio de animación Toei, y trabajó como auxiliar de dibujo, mayormente para series de TV. Allí conoció a Takahata.
-    
-                Isao Takahata, 6 años mayor, ya llevaba algunos años en el estudio, en roles de mayor relevancia. En 1964 Miyazaki encabezó un movimiento sindical en el estudio, secundado por Takahata. Allí se cimentó la amistad de los futuros creadores de Ghibli; también allí Miyazaki conoció a su futura esposa, con quien se casó al año siguiente.
+                  Isao Takahata, 6 años mayor, ya llevaba algunos años en el estudio, en roles de mayor relevancia. En 1964 Miyazaki encabezó un movimiento sindical en el estudio, secundado por Takahata. Allí se cimentó la amistad de los futuros creadores de Ghibli; también allí Miyazaki conoció a su futura esposa, con quien se casó al año siguiente.
                 </p>
               </div>
             </div>
@@ -152,42 +136,40 @@
           <section class="infoReseña">
             <div id="reseña">
               <div>
-                <h1>Historia</h1>
+                <h1>Preferidas</h1>
                 <br>
                 <p>
-                Considerado por la crítica especializada y muchos cinéfilos como uno de los mejores estudios de animación del mundo en la actualidad, Estudio Ghibli se abrió paso con sus largometrajes animados y también con la producción varios cortometrajes, comerciales de televisión y una película para televisión. Fue fundado el 15 de junio de 1985 por el galardonado y reputado Hayao Miyazaki e Isao Takahata, su colega y mentor y el productor Toshio Suzuki , tras el rotundo éxito de la película de anime de Topcraft Nausicaä del Valle del Viento (1984).
+                Entre sus más aclamadas películas encontramos a Mi vecino Totoro, que cuenta la historia de una familia y sus interacciones con un espíritu del bosque al que llaman «Totoro», en un Japón de la posguerra. De esta manera se convirtió en todo un emblema de Studio Ghibli, ya que cambió el mundo de la animación para siempre y volvió a este personaje en la insignia y mascota representativa del Studio.
                 </p>
-                <br>
                 <p>
-                Hayao Miyazaki nació en 1941 en Tokio. De joven solía dibujar, aunque como pasatiempo. Del cine animado, más que Disney o la animación japonesa de entonces, lo marcaron obras como "El rey y el pájaro" (Paul Grimault, Francia, 1948) "La reina de las nieves" (Atamanov, Rusia, 1957) y los hermanos Fleischer. Estudió ciencias políticas y economía. Tras graduarse, ingresó en 1963 al estudio de animación Toei, y trabajó como auxiliar de dibujo, mayormente para series de TV. Allí conoció a Takahata.
-    
-                Isao Takahata, 6 años mayor, ya llevaba algunos años en el estudio, en roles de mayor relevancia. En 1964 Miyazaki encabezó un movimiento sindical en el estudio, secundado por Takahata. Allí se cimentó la amistad de los futuros creadores de Ghibli; también allí Miyazaki conoció a su futura esposa, con quien se casó al año siguiente.
+                También encontramos aquí a La princesa Mononoke, nos narra la lucha entre los guardianes sobrenaturales de un bosque y los humanos que profanan sus recursos, visto por el forastero Ashitaka. Fue un éxito de taquilla casi instantáneo, convirtiéndose así en la película de mayor recaudación en Japón de 1997. También ocupó el primer puesto de las películas más taquilleras de la historia de Japón hasta el 2001, cuando se estrenó El viaje de Chihiro.
+                </p>
+                <p>
+                Otra de sus películas más queridas y aclamadas es “El viaje de Chihiro”. Su estreno fue en 2001, dirigida y creada por Hayao Miyazaki, cuenta la historia de una valiente niña de nombre Chihiro, quien tras mudarse de casa se ve atrapada en un mundo mágico lleno de espíritus. Su éxito fue absoluto, ganando un Oso de Oro y el premio Oscar del 2002, en la categoría de: Mejor película de animación.
                 </p>
               </div>
             </div>
           </section>
           <div>
-            <img id="imgCuadro" src="./images/cuadro_1.jpg" alt="">
+            <img id="imgCuadro" src="./images/cuadro_3.jpg" alt="">
           </div>
         </div>
       </div> 
     </section>
 
-
     <!-- Seccion personajes -->
     <section class="character" id="personajes">
       <div class="characterContainer">
-        <h3 class="characterTitle">Personajes</h3>
         <div class="characterFilterSearch">
           <div class="characterFilters" id="filterSort">
             <select class="select" id="sortCharacter">
-              <option selected disabled value="">Ordenar por</option>
+              <option selected value="">Ordenar por</option>
               <option value="A-Z">A-Z</option>
             </select>
           </div>
           <div class="characterFilters" id="filterGender">
             <select class="select" id="gender">
-              <option selected disabled value="">Género</option>
+              <option value="">Género</option>
               <option value="Female">Female</option>
               <option value="Male">Male</option>
               <option value="NA">NA</option>
@@ -196,7 +178,7 @@
           </div>
           <div class="characterFilters" id="filterSpecie">
             <select class="select" id="specie">
-              <option selected disabled value="">Especie</option>
+              <option value="">Especie</option>
               <option value="Arch-mage/Human">Arch-mage/Human</option>
               <option value="Bird">Bird</option>
               <option value="Borrower">Borrower</option>
@@ -220,32 +202,39 @@
               <option value="Wolf">Wolf</option>
             </select>
           </div>
-        </div>  
-
+        </div>
+        
         <div class="characterCount" id="charsCountDiv"></div>
-
         <main class="characterMainCards" id="characterCards">
         </main>
       </div>
     </section>
 
-
     <!-- Sección locaciones -->
     <section class="location" id="locaciones">
       <div class="location_container">
-        <h3 class="location_title">Locaciones</h3>
         <div class="location_filterSearch">
           <div class="filters" id="filterSort">
             <select class="select" id="sortLocation">
-              <option selected disabled value="">Sort by</option>
+              <option value="">Sort by</option>
               <option value="A-Z">A-Z</option>
-              <option value="Z-A">Z-A</option>
             </select>
           </div>
-
+          <div class="filters" id="filterClimate">
+            <select class="select" id="climate">
+              <option selected value="">Climate</option>
+              <option value="Dry">Dry</option>
+              <option value="Continental">Continental</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Wet">Wet</option>
+              <option value="Warm">Warm</option>
+              <option value="Damp">Damp</option>
+              <option value="TODO">TODO</option>
+            </select>
+          </div>
           <div class="filters" id="filterTerrain">
             <select class="select" id="terrain">
-              <option selected disabled value="">Terrain</option>
+              <option value="">Terrain</option>
               <option value="City">🏙 City</option>
               <option value="Earthsea">🏝 Earthsea</option>
               <option value="Forest">🌳 Forest</option>
@@ -259,17 +248,15 @@
             </select>
           </div>
         </div>  
-
         <div class="locationsCount" id="locationsCountDiv"></div>
-    
         <main id="locationsCards" class="mainCards">
         </main>
       </div>
     </section>
 
-
     <!-- Referencia archivo main.js -->
     <script src="main.js" type="module"></script>
 
 </body>
+
 </html>

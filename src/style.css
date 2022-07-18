@@ -4,8 +4,6 @@
 }
 body{
   background-image: url("./images/fondo.jpg");
-  
-  /* background-repeat: space repeat; */
   background-size: contain;
   width: 100%;
 }
@@ -47,6 +45,17 @@ a{
 .container{
   display: flex;
 }
+
+.filmsCountDiv{
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center; 
+  margin: 22px 0px 22px 0px;
+  background-color: rgba(247, 246, 243, 0.5);
+  box-shadow: 4px 10px 10px;
+  border-radius: 15px;
+}
+
 #imagen{
   display: flex;
   flex-direction: column;
@@ -131,12 +140,16 @@ a{
   margin: 10px;
 }
 .infoReseña{
-  border: solid rgb(70, 67, 67);
-    /* box-shadow: 10px 10px 10px; */
+  /* border: solid rgb(70, 67, 67); */
+  box-shadow: 10px 10px 10px;
+  text-align: justify;
   width: 700px;
   height: 470px;
   margin: 90px;
-  margin-right: 10px;
+  border: solid #3f4142;
+  border-radius: 4%;
+  /* background-color: #dadde0; */
+  background-color: rgba(36, 144, 226, 0.7);
 }
 #reseña h1{
   font-size: xx-large;
@@ -158,6 +171,19 @@ a{
   box-shadow: 15px 15px 15px;
 
 }
+#containerPlus{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+#plus{
+  border: solid rgb(25, 116, 207);
+  width: 4%;
+  border-radius: 40px;
+  margin-right: 15px;
+  cursor: pointer;
+}
 
 .info p{
   text-align: justify;
@@ -170,12 +196,9 @@ a{
   margin-top: 50px;
   border: solid blue;
 }
-.infoSecond{
+/* .infoSecond{
   border: solid yellowgreen;
-}
-
-
-
+} */
 /* .info .infoFirst{
   display: flex;
   flex-direction: column;
@@ -216,7 +239,7 @@ a{
   justify-content: space-between;
   /* border: solid rgb(136, 67, 226) 7px; */
   border: solid rgb(0, 0, 0);
-  background-color: #be2e2e;
+  background-color: #4291d1;
 }
 
 .itemSelect{
@@ -240,30 +263,37 @@ select{
 
 
 
-/* ----personajes---- */
+/* ----PERSONAJES---- */
 
 .character{
   margin: 64px 100px;
 }
 
-.characterContainer{
-  background-color: #be2e2e;
-}
-
-.characterTitle{
-  font-size: 32px;
-  text-align: center;
-}
-
 .characterFilterSearch{
-  background-color: #797979;
+  background-color: #be2e2e;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.select{
+  background-color: #f67921;
+  border: solid hwb(0 0% 100%);
+  height: 30px;
+  width:280px ;
+}
+
+.characterCount{
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center; 
+  margin: 22px 0px 22px 0px;
+  background-color: rgba(247, 246, 243, 0.5);
+  box-shadow: 4px 10px 10px;
+  border-radius: 15px;
+}
+
 .characterMainCards{
-  background-color: aqua;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -271,14 +301,15 @@ select{
 }   
 
 section.character div.card{
-  background-color: #f67921;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   padding: 16px; 
-  background-color: white;
-  margin: 22px 15px 22px 0px;
+  margin: 22px 15px 22px 0px; 
+  background-color: rgba(247, 246, 243, 0.5);
+  box-shadow: 4px 10px 10px;
+  border-radius: 15px;
 }
 
 section.character div.card ul{
@@ -289,11 +320,80 @@ section.character div.card ul{
   text-align: center;
 }
 
-
-
-section.location{
-  background-color: #4177ae;
+section.character div.card ul img{
+  border-radius: 15px;
 }
+
+.character{
+  display: none;
+}
+
+
+/* ----LOCACIONES---- */
+
+.location{
+  margin: 64px 100px;
+}
+
+.location_filterSearch{
+  background-color: #be2e2e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.select{
+  background-color: #f67921;
+  border: solid hwb(0 0% 100%);
+  height: 30px;
+  width:280px ;
+}
+
+.locationsCount{
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center; 
+  margin: 22px 0px 22px 0px;
+  background-color: rgba(247, 246, 243, 0.5);
+  box-shadow: 4px 10px 10px;
+  border-radius: 15px;
+}
+
+.mainCards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}   
+
+section.location div.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 16px; 
+  margin: 22px 15px 22px 0px; 
+  background-color: rgba(247, 246, 243, 0.5);
+  box-shadow: 4px 10px 10px;
+  border-radius: 15px;
+}
+
+section.location div.card ul{
+  margin: 0;
+  padding: 0;
+  font-weight: 600; 
+  font-size: 16px;
+  text-align: center;
+}
+
+section.location div.card ul img{
+  border-radius: 15px;
+}
+
+.location{
+  display: none;
+}
+
 
 
 
