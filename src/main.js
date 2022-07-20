@@ -1,7 +1,6 @@
 import data from './data/ghibli/ghibli.js';
 /// PERSONAJES DE LAS PELICULAS /// 
-import {ordenarAZ,filtering,
-  obtenerDataTipo, filtrarDoble,ordenarPersonajes, filtrarDobleLocaciones} from './data.js';
+import {ordenarAZ, filtering, obtenerDataTipo, filtrarDoble,ordenarPersonajes, filtrarDobleLocaciones} from './data.js';
 
 
 
@@ -12,8 +11,8 @@ const films = data.films
 // console.log(films)
 
 const filmsCountDiv = document.getElementById("filmsCountDiv")
-const containerA = document.getElementById("containerA")
-containerA.style.display="none"
+//const containerA = document.getElementById("containerA")
+// containerA.style.display="none"
 
 
 const id_reseña = document.getElementById("id_reseña")
@@ -115,52 +114,30 @@ date.addEventListener("change",(event)=>{
 
 let btnReseña = document.getElementById("btnReseña")
 let animaciones = document.getElementById("animaciones")
-
-let reseña = document.getElementById("reseña")
 let imgCuadro = document.getElementById("imgCuadro")
-
-
-
 
 btnReseña.addEventListener("click",function(){ 
   animaciones.style.display="none"
   personajes_id.style.display="none"
   locaciones.style.display ="none"
   imgCuadro.style.display="block"
-  reseña.style.display="block"
-  containerA.style.display="block"
+  id_reseña.style.display="block"
 })
-
-
-
 
 
 let btnAnimaciones = document.getElementById("btnAnimaciones")
 
 btnAnimaciones.addEventListener("click",function(){ 
   imgCuadro.style.display="none"
-  reseña.style.display="none"
-  containerA.style.display="none"
+  id_reseña.style.display="none"
   animaciones.style.display="block"
   personajes_id.style.display="none"
   locaciones.style.display ="none"
 })
 
 
-
-
-
-
-
-
-
-
-
 ///// *************PERSONAJES********************* ///
 
-// let animaciones = document.getElementById('animaciones')
-// let personajes = document.getElementById('personajes')
-// let locaciones = document.getElementById('locaciones')
 
 let characterCards=document.getElementById("characterCards")
 let charsCountDiv=document.getElementById("charsCountDiv")
@@ -226,7 +203,7 @@ function showSection(section1,section2,section3,section4,data,tipo){
 menu_personajes.addEventListener("click",(event)=>{
   const tipo = 'personajes'
   const dataPersonajes = obtenerDataTipo(films,tipo)
-  showSection(animaciones,locaciones,reseña,personajes_id,dataPersonajes,tipo);
+  showSection(animaciones,locaciones,id_reseña,personajes_id,dataPersonajes,tipo);
 })
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
@@ -241,12 +218,19 @@ sortCharacter.addEventListener("change",(event)=>{
 
 gender.addEventListener("change",(event)=>{
   const selectedGender = event.target.value;
+  // console.log(selectedGender)
   filters.gender = selectedGender
+  
   const tipo = 'personajes'
   const dataPersonajes = obtenerDataTipo(films,tipo)
+  console.log(dataPersonajes)
+
   const filteredGender = filtrarDoble(dataPersonajes, filters);
+  console.log(filteredGender)
+
   showCharacter(filteredGender,tipo);
 });
+
 
 specie.addEventListener("change",(event)=>{
   const selectedSpecie = event.target.value;
@@ -259,8 +243,6 @@ specie.addEventListener("change",(event)=>{
 
 
 
-
-
 ///////***** LOCACIONES ******///////////////
 
 /// LOCACIONES EN PANTALLA ///
@@ -268,7 +250,7 @@ specie.addEventListener("change",(event)=>{
 menu_locaciones.addEventListener("click",(event)=>{
   const tipo = 'locaciones'
   const dataPersonajes = obtenerDataTipo(films,tipo)
-  showSection(animaciones,personajes_id,reseña,locaciones,dataPersonajes,tipo);
+  showSection(animaciones,personajes_id,id_reseña,locaciones,dataPersonajes,tipo);
 })
 
 /// LOCACIONES ORDENADAS EN PANTALLA ///
