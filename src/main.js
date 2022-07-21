@@ -44,7 +44,7 @@ function showFilms(element){
                 <p class="text">Año de Lanzamiento: ${film.release_date}</p>
                 <p class="text">Director: ${film.director}</p>
                 <p class="text">Productor: ${film.producer}</p>
-                <p class="text">Score: ${film.rt_score}</p>  
+                <p class="text">Score: ${film.rt_score}</p>
               </div>                
             </div>
         </div>
@@ -52,8 +52,7 @@ function showFilms(element){
     
 
 mainImagen.innerHTML += elementIndex;
-}
-}
+}}
 showFilms(films)
 
 
@@ -112,6 +111,14 @@ date.addEventListener("change",(event)=>{
   showFilms(filteredDate);
 });
 
+score.addEventListener("change",(event)=>{
+  const selectedScore = event.target.value;
+  const filteredScore = filtering(films, "rt_score", selectedScore );
+  showFilms(filteredScore);
+});
+
+
+
 let btnReseña = document.getElementById("btnReseña")
 let animaciones = document.getElementById("animaciones")
 let imgCuadro = document.getElementById("imgCuadro")
@@ -144,14 +151,14 @@ let charsCountDiv=document.getElementById("charsCountDiv")
 let sortCharacter=document.getElementById("sortCharacter")
 let gender=document.getElementById('gender')
 let specie=document.getElementById('specie')
-let menu_personajes = document.getElementById('menu_personajes')
+let btnPersonajes = document.getElementById('btnPersonajes')
 
 let locationsCards=document.getElementById("locationsCards")
 let locationsCountDiv=document.getElementById("locationsCountDiv")
 let sortLocation=document.getElementById("sortLocation")
 let climate=document.getElementById("climate")
 let terrain=document.getElementById("terrain")
-let menu_locaciones = document.getElementById('menu_locaciones')
+let btnLocaciones = document.getElementById('btnLocaciones')
 
 let filters = {
   gender :"" , 
@@ -200,7 +207,7 @@ function showSection(section1,section2,section3,section4,data,tipo){
 }
 
 /// PERSONAJES EN PANTALLA ///
-menu_personajes.addEventListener("click",(event)=>{
+btnPersonajes.addEventListener("click",(event)=>{
   const tipo = 'personajes'
   const dataPersonajes = obtenerDataTipo(films,tipo)
   showSection(animaciones,locaciones,id_reseña,personajes_id,dataPersonajes,tipo);
@@ -247,7 +254,7 @@ specie.addEventListener("change",(event)=>{
 
 /// LOCACIONES EN PANTALLA ///
 
-menu_locaciones.addEventListener("click",(event)=>{
+btnLocaciones.addEventListener("click",(event)=>{
   const tipo = 'locaciones'
   const dataPersonajes = obtenerDataTipo(films,tipo)
   showSection(animaciones,personajes_id,id_reseña,locaciones,dataPersonajes,tipo);

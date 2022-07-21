@@ -543,7 +543,7 @@ const mockData =  [
       "locations": [],
       "vehicles": []
     }
-  ]
+]
 const personajes = [
   {
     id: 'fe93adf2-2f3a-4ec4-9f68-5422f1b87c01',
@@ -676,7 +676,7 @@ const personajes = [
     specie: 'Human'
   }
 ]  
-const locaciones = [
+const mockLocaciones = [
   {
   climate: "Dry",
   terrain: "Hill",
@@ -690,18 +690,61 @@ const locaciones = [
   terrain: "Hill",
   }
 ]
+const locaciones = [
+  {
+    id: '6ba60a86-7c74-4ec4-a6f4-7112b5705a2f',
+    name: 'Gondoa',
+    img: 'https://static.wikia.nocookie.net/studio-ghibli/images/2/25/Thumbnail-8.jpeg',
+    climate: 'TODO',
+    terrain: 'TODO',
+    surface_water: '40',
+    residents: [ 'TODO' ]
+  },
+  {
+    id: '26361a2c-32c6-4bd5-ae9c-8e40e17ae28d',
+    name: "Pazu's Mines",
+    img: 'https://preview.redd.it/fmikehlh8dl41.jpg?auto=webp&s=a997a7d6726fc151a438985899b052d0fd357716',     
+    climate: 'Dry',
+    terrain: 'Hill',
+    surface_water: '0',
+    residents: [ 'TODO' ]
+  },
+  {
+    id: '0fafa7a3-64c1-43fe-881b-ecb605c01e09',
+    name: 'Laputa',
+    img: 'https://static.wikia.nocookie.net/studio-ghibli/images/e/e7/Laputa.png',
+    climate: 'Continental',
+    terrain: 'City',
+    surface_water: '40',
+    residents: [ 'TODO' ]
+  },
+  {
+    id: '0132f7f6-fd52-4ac3-b5df-c96b609f77b6',
+    name: 'Tedis',
+    img: 'https://static.wikia.nocookie.net/studio-ghibli/images/1/13/Tedis.jpg',
+    climate: 'Continental',
+    terrain: 'Hill',
+    surface_water: '30',
+    residents: [ 'TODO' ]
+  }
+]
 
 
 describe('probando filtrarDobleLocaciones', () =>{
   it('filtrarDobleLocaciones',()=>{
-    const locacionesFiltradas = filtrarDobleLocaciones(locaciones, { climate: "Continental", terrain: "Hill" })
-    console.log("aquí",locacionesFiltradas)
+    const locacionesFiltradas = filtrarDobleLocaciones(mockLocaciones, { climate: "Continental", terrain: "Hill" })
+    // console.log("aquí",locacionesFiltradas)
     expect(locacionesFiltradas.length).toBe(1)
   })
 })
 
-
-
+describe('probando filtrarDoble', () =>{
+  it('filtrarDoble', ()=>{
+    const personajesFiltrados = filtrarDoble(personajes, { gender: "Female", specie: "Human" })
+    // console.log("console",personajesFiltrado.length)
+    expect(personajesFiltrados.length).toBe(3)
+  })
+})
 
 describe('probando obtenerDataTipo', () =>{
   it('is a function', () => {
@@ -710,6 +753,10 @@ describe('probando obtenerDataTipo', () =>{
   it('obtenerDataTipo', () => {
     // console.log("devuelve",obtenerDataTipo([mockData[0]],'personajes'))
     expect(obtenerDataTipo([mockData[0]],'personajes')).toEqual(personajes);
+  });
+  it('obtenerDataTipo', () => {
+    // console.log("devuelve",obtenerDataTipo([mockData[0]],'mockLocaciones'))
+    expect(obtenerDataTipo([mockData[0]],'mockLocaciones')).toEqual(locaciones);
   });
 }) 
 
@@ -776,55 +823,14 @@ describe('probando ordenarPersonajes', () =>{
   });
   it('ordenar personajes',() => {
     // Dado
-    const personajes = [{'name': 'B'},{'name': 'A'}]
+    const personajes = [{'name': 'A'},{'name': 'B'},{'name': 'A'},{'name': 'C'}]
     // Cuando
     ordenarPersonajes(personajes)
     // Entonces
-    expect(personajes).toEqual([{'name': 'A'},{'name': 'B'}])
+    expect(personajes).toEqual([{'name': 'A'},{'name': 'A'},{'name': 'B'},{'name': 'C'}])
   })
 })
 
-describe('probando filtrarDoble', () =>{
-  it('filtrarDoble', ()=>{
-    const personajesFiltrados = filtrarDoble(personajes, { gender: "Female", specie: "Human" })
-    // console.log("console",personajesFiltrado.length)
-    expect(personajesFiltrados.length).toBe(3)
-  })
-})
-
-
-
-// const arreglo = [{specie: 'Cat'},{specie: 'pizza'}]
-
-// describe('filtrarPersonajes', () => {
-//   it('is a function', () => {
-//     expect(typeof filtrarPersonajes).toBe('function');
-//   });
-
-//   it('should filter by cat', () => {
-//     expect(filtrarPersonajes(arreglo)).toEqual([{specie:'Cat'}]);
-//   });
-// });
-// const _mockData ={"films": [{"title": "Castle"}],[{"title": "Totoro"}],[{"title": "Kiki"}]}
-
-
-
-
-
-///  Tests funciones animaciones ///////
-
-
-/// Tests funciones personajes //////
-
-
-
-// describe('probando obtenerPersonajes', () => {
-  //   it('returns characters', () => {
-  //     const films = [{'people': [{'name': 'B'}]},{'people': [{'name': 'A'}]}]
-  //     expect(obtenerPersonajes(films)).toEqual([{'name': 'B'},{'name': 'A'}]);
-  //   });
-  
-  // })
 
 
 

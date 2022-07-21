@@ -21,7 +21,6 @@ body{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
   background-color: #333738;
   width: 100%;
   display: inline-flex;
@@ -59,8 +58,6 @@ a{
 #imagen{
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* flex-direction: ; */
   /* justify-content: space-evenly; */
   /* border: solid green 10px; */
   /* align-items: center; */
@@ -70,21 +67,8 @@ a{
   /* width: clamp(200px, 100%, 3000px);  */
 }
 
-.frontCard, .backCard {
-  display: flex;
-  flex-direction: column;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-/* .frontCard, .backCard
-  position: absolute;
-  justify-content: center;
-  align-items: centers;
-  width: 100%;
-  height: 100%; */
 .posterTitle{
   display: flex;
-  /* opacity: .5; */
   background-color: rgba(247, 246, 243, 0.5);
   box-shadow: 4px 10px 10px;
   flex-direction: column;
@@ -101,13 +85,13 @@ a{
   margin: 20px;
   margin-top: 3px;
 }
+
 .posterTitle img{
   width: 250px;
   height: 360px;
   border-radius: 15px;
-  /* opacity: .5;
-  opacity: 1; */
 }
+
 .backCard p{
   border: solid rgb(40, 59, 199);
   font-size: large;
@@ -118,9 +102,12 @@ a{
   /* filter: drop-shadow(7px 10px 10px gray); */
   background-color: rgba(192, 185, 185, 0.7);
   height: 200px;
-  padding: 17px;
+  padding: 40px;
+  /* padding: 10%; */
   margin-top: 125px;
-  margin-left: 130px;
+  /* margin-left: 130px; */
+  margin: 10%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,25 +118,32 @@ a{
   max-width: 550px;
   overflow:auto;
   box-sizing: border-box;
+  text-align: justify;
+
 }
+
+/* .infoSecond{
+  text-align: justify;
+  border: solid salmon;
+} */
+
 .containerReseña{
   display: flex;
   background-color: rgba(192, 185, 185, 0.7);
-  /* box-shadow: 10px 10px 10px; */
   border-radius: 7px;
   margin: 10px;
 }
+
 .infoReseña{
-  /* border: solid rgb(70, 67, 67); */
   box-shadow: 10px 10px 10px;
   text-align: justify;
   width: 700px;
   height: 470px;
   margin: 90px;
+  padding: 20px;
   border: solid #3f4142;
   border-radius: 4%;
-  /* background-color: #dadde0; */
-  background-color: rgba(36, 144, 226, 0.7);
+  background-color: rgba(201, 178, 31, 0.7);
 }
 #reseña h1{
   font-size: xx-large;
@@ -161,24 +155,19 @@ a{
   padding: 10px;
 }
 #imgCuadro{
-  /* margin: auto; */
-  /* margin: 70px; */
-  /* margin-left: 5px; */
   margin: 10%;
-  /* margin-top: 50px; */
+  margin-top: 23%;
   width: 80%;
   border-radius: 10px;
   box-shadow: 15px 15px 15px;
-
 }
 #containerPlus{
   display: flex;
   justify-content: flex-end;
 }
 
-
 #plus{
-  border: solid rgb(25, 116, 207);
+  /* border: solid rgb(25, 116, 207); */
   width: 4%;
   border-radius: 40px;
   margin-right: 15px;
@@ -192,22 +181,7 @@ a{
 .text{
   font-size: 17px;
 }
-.infoFirstB{
-  margin-top: 50px;
-  border: solid blue;
-}
-/* .infoSecond{
-  border: solid yellowgreen;
-} */
-/* .info .infoFirst{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-/* .info h4{
-  display: flex;
-} */
+
 .info::-webkit-scrollbar {
   -webkit-appearance: none;
 }
@@ -230,38 +204,27 @@ a{
 }
 
 .info::-webkit-scrollbar-track {
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 #options{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* border: solid rgb(136, 67, 226) 7px; */
   border: solid rgb(0, 0, 0);
-  background-color: #4291d1;
-}
-
-.itemSelect{
-  color: black;
-  background-color: #f67921;
-  border: solid hwb(0 0% 100%);
-  appearance: none;
-  overflow: hidden;
-  height: 30px;
-  width:280px
-
-    /* border-radius: 3px; */
-  
+  background-color: #ffffff;
 }
 
 select{
-  width: 200px;
+  background-color: #ffffff;
+  border: solid hwb(0 100% 0%);
+  width:255px;
+  /* width:253px; */
   height: 30px;
-  cursor: pointer; 
+  overflow: hidden;
+    /* appearance: none; */
+  
 }
-
-
 
 /* ----PERSONAJES---- */
 
@@ -274,13 +237,6 @@ select{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.select{
-  background-color: #f67921;
-  border: solid hwb(0 0% 100%);
-  height: 30px;
-  width:280px ;
 }
 
 .characterCount{
@@ -336,18 +292,12 @@ section.character div.card ul img{
 }
 
 .location_filterSearch{
-  background-color: #be2e2e;
+  background-color: #b19595;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.select{
-  background-color: #f67921;
-  border: solid hwb(0 0% 100%);
-  height: 30px;
-  width:280px ;
-}
 
 .locationsCount{
   font-size: 32px;

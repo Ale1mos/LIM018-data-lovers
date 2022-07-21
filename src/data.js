@@ -62,6 +62,7 @@ export const filtrarDobleLocaciones = (personajes,filtros) => {
   return personajes_filtrado
 }
 
+
 // export const filtrarGenero = (personajes,genero) => {
 //   const personajes_filtrado = personajes.filter(personajes => personajes.gender == genero);
 //   console.log('personajes filtrados',personajes_filtrado)
