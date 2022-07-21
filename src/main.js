@@ -11,12 +11,11 @@ const films = data.films
 // console.log(films)
 
 const filmsCountDiv = document.getElementById("filmsCountDiv")
-//const containerA = document.getElementById("containerA")
-// containerA.style.display="none"
 
 
-const id_reseña = document.getElementById("id_reseña")
-id_reseña.style.display="none"
+
+const reseña = document.getElementById("reseña")
+reseña.style.display="none"
 let personajes_id = document.getElementById('personajes')
 personajes_id.style.display="none"
 let locaciones = document.getElementById('locaciones')
@@ -33,8 +32,8 @@ function showFilms(element){
     const elementIndex = `
     <div id="divCard" class="film">
         <div class="container">
-            <div class="face">
-                <div class="posterTitle">
+            <div>
+                <div class="card" id="poster">
                     <h2>${film.title}</h2>
                     <img alt="Film poster" src="${film.poster}"/>
                 </div>
@@ -66,10 +65,10 @@ plus.addEventListener("click",function(){
       const elementIndex = `
       <div id="divCard" class="film">
           <div class="container">
-              <div class="face">
-                <div class="posterTitle">
+              <div>
+                <div class="card" id="poster">
                   <h2>${film.title}</h2>
-                  <img class="face" alt="Film poster" src="${film.poster}"/>
+                  <img alt="Film poster" src="${film.poster}"/>
                 </div>
               </div>
               <div class="info">
@@ -128,7 +127,7 @@ btnReseña.addEventListener("click",function(){
   personajes_id.style.display="none"
   locaciones.style.display ="none"
   imgCuadro.style.display="block"
-  id_reseña.style.display="block"
+  reseña.style.display="block"
 })
 
 
@@ -136,7 +135,7 @@ let btnAnimaciones = document.getElementById("btnAnimaciones")
 
 btnAnimaciones.addEventListener("click",function(){ 
   imgCuadro.style.display="none"
-  id_reseña.style.display="none"
+  reseña.style.display="none"
   animaciones.style.display="block"
   personajes_id.style.display="none"
   locaciones.style.display ="none"
@@ -186,7 +185,7 @@ function showCharacter(element,tipo){
     locationsCountDiv.innerHTML = "Aquí hay un total de " + element.length + " locaciones.";
     locationsCards.innerHTML= "";
     for(let i=0 ; i< element.length; i++){
-      locationsCards.innerHTML+=`<div class='card'>
+      locationsCards.innerHTML+=`<div class='card' id="posterLocation">
       <ul>
       <img src='${element[i].img}' width='200px'>
       <p>${element[i].name}</p>
@@ -210,7 +209,7 @@ function showSection(section1,section2,section3,section4,data,tipo){
 btnPersonajes.addEventListener("click",(event)=>{
   const tipo = 'personajes'
   const dataPersonajes = obtenerDataTipo(films,tipo)
-  showSection(animaciones,locaciones,id_reseña,personajes_id,dataPersonajes,tipo);
+  showSection(animaciones,locaciones,reseña,personajes_id,dataPersonajes,tipo);
 })
 
 /// PERSONAJES ORDENADOS EN PANTALLA A-Z ///
@@ -257,7 +256,7 @@ specie.addEventListener("change",(event)=>{
 btnLocaciones.addEventListener("click",(event)=>{
   const tipo = 'locaciones'
   const dataPersonajes = obtenerDataTipo(films,tipo)
-  showSection(animaciones,personajes_id,id_reseña,locaciones,dataPersonajes,tipo);
+  showSection(animaciones,personajes_id,reseña,locaciones,dataPersonajes,tipo);
 })
 
 /// LOCACIONES ORDENADAS EN PANTALLA ///

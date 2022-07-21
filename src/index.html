@@ -29,7 +29,7 @@
     <!-- Sección animaciones -->
     <section id="animaciones">
       
-        <div id="options">
+        <div class="options">
           <div>
             <select id="itemAZ" class="itemSelect">
               <option selected disabled value="">Alfabéticamente</option>
@@ -102,19 +102,18 @@
           </div>
         </div>
         
-        <div id="filmsCountDiv" class="filmsCountDiv"></div>
+        <div class="count" id="filmsCountDiv"></div>
         <div id="containerPlus"><img id="plus" src="./images/plus.jpg" alt=""></div>
-        <main id="imagen" class="mainImagen"></main>
+        <main class="mainImagen"></main>
 
     </section>
 
     <!-- Sección reseña  -->
-    <section class="reseña" id="id_reseña">
-      <div id="containerA">
+    <section id="reseña">
         <div class="containerReseña">
           <section class="infoReseña">
-            <div id="reseña">
-              <div>
+            
+              
                 <h1>Historia</h1>
                 <br>
                 <p>
@@ -123,8 +122,8 @@
                 <p>
                   Así se abrió paso Studio Ghibli, dejándonos entre sus grandes enseñanzas el de dar la debida importancia a los pequeños detalles o momentos: un rayo de sol, el sonido de un río, una flor mecida por el viento… Y esto, nos lleva a otra de las lecciones de las creaciones de Studio Ghibli, el respeto por la naturaleza y los animales, además de los muchos mensajes sociales que incluyen las películas.
                 </p>
-              </div>
-            </div>
+              
+            
           </section>
           
           <div>
@@ -137,8 +136,6 @@
             <img id="imgCuadro" src="./images/cuadro_2.jpg" alt="">
           </div>
           <section class="infoReseña">
-            <div id="reseña">
-              <div>
                 <h1>Fundadores</h1>
                 <br>
                 <p>
@@ -147,14 +144,11 @@
                 <p>
                   Isao Takahata, 6 años mayor, ya llevaba algunos años en el estudio, en roles de mayor relevancia. En 1964 Miyazaki encabezó un movimiento sindical en el estudio, secundado por Takahata. Allí se cimentó la amistad de los futuros creadores de Ghibli; también allí Miyazaki conoció a su futura esposa, con quien se casó al año siguiente.
                 </p>
-              </div>
-            </div>
           </section>     
         </div>
         <div class="containerReseña">
           <section class="infoReseña">
-            <div id="reseña">
-              <div>
+            
                 <h1>Preferidas</h1>
                 <br>
                 <p>
@@ -166,28 +160,26 @@
                 <p>
                 Otra de sus películas más queridas y aclamadas es “El viaje de Chihiro”. Su estreno fue en 2001, dirigida y creada por Hayao Miyazaki, cuenta la historia de una valiente niña de nombre Chihiro, quien tras mudarse de casa se ve atrapada en un mundo mágico lleno de espíritus. Su éxito fue absoluto, ganando un Oso de Oro y el premio Oscar del 2002, en la categoría de: Mejor película de animación.
                 </p>
-              </div>
-            </div>
+                             
           </section>
           <div>
             <img id="imgCuadro" src="./images/cuadro_3.jpg" alt="">
           </div>
         </div>
-      </div> 
     </section>
 
     <!-- Seccion personajes -->
     <section class="character" id="personajes">
-      <div class="characterContainer">
-        <div class="characterFilterSearch">
-          <div class="characterFilters" id="filterSort">
-            <select class="select" id="sortCharacter">
+      
+        <div class="options">
+          <div>
+            <select id="sortCharacter">
               <option selected disabled value="">Alfabéticamente</option>
               <option value="A-Z">A-Z</option>
             </select>
           </div>
-          <div class="characterFilters" id="filterGender">
-            <select class="select" id="gender">
+          <div>
+            <select id="gender">
               <option selected disabled value="">Género</option>
               <option value="Female">Female</option>
               <option value="Male">Male</option>
@@ -195,8 +187,8 @@
               <option value="Unknown">Unknown</option>
             </select>
           </div>
-          <div class="characterFilters" id="filterSpecie">
-            <select class="select" id="specie">
+          <div>
+            <select id="specie">
               <option selected disabled value="">Especie</option>
               <option value="Arch-mage/Human">Arch-mage/Human</option>
               <option value="Bird">Bird</option>
@@ -223,23 +215,22 @@
           </div>
         </div>
         
-        <div class="characterCount" id="charsCountDiv"></div>
-        <main class="characterMainCards" id="characterCards">
+        <div class="count" id="charsCountDiv"></div>
+        <main class="mainCards" id="characterCards">
         </main>
-      </div>
     </section>
 
     <!-- Sección locaciones -->
     <section class="location" id="locaciones">
-        <div class="location_filterSearch">
-          <div class="filters" id="filterSort">
-            <select class="select" id="sortLocation">
+        <div class="options">
+          <div>
+            <select id="sortLocation">
               <option selected disabled value="">Alfabéticamente</option>
               <option value="A-Z">A-Z</option>
             </select>
           </div>
-          <div class="filters" id="filterClimate">
-            <select class="select" id="climate">
+          <div>
+            <select id="climate">
               <option selected disabled value="">Clima</option>
               <option value="Dry">Dry</option>
               <option value="Continental">Continental</option>
@@ -250,8 +241,8 @@
               <option value="TODO">TODO</option>
             </select>
           </div>
-          <div class="filters" id="filterTerrain">
-            <select class="select" id="terrain">
+          <div>
+            <select id="terrain">
               <option selected disabled value="">Terreno</option>
               <option value="City">🏙 City</option>
               <option value="Earthsea">🏝 Earthsea</option>
@@ -266,8 +257,8 @@
             </select>
           </div>
         </div>  
-        <div class="locationsCount" id="locationsCountDiv"></div>
-        <main id="locationsCards" class="mainCards">
+        <div class="count" id="locationsCountDiv"></div>
+        <main class="mainCards" id="locationsCards" >
         </main>
     </section>
 
