@@ -9,7 +9,6 @@ export const ordenarAZ = (data, orden) => {
   }
 };
 
-
 export const obtenerDataTipo = (films,tipo) => {
   let personajes = [];
   // console.log('peliculas',films)
@@ -49,10 +48,6 @@ export const filtrarDoble = (personajes,filtros) => {
   return personajes_filtrado
 }
 
-
-
-
-//// Funciones Locaciones /////
 export const filtrarDobleLocaciones = (personajes,filtros) => {
   // console.log('filtros', filtros)
   

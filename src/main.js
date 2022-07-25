@@ -4,6 +4,7 @@ import {ordenarAZ, filtering, obtenerDataTipo, filtrarDoble,ordenarPersonajes, f
 
 
 
+
 // let itemAZ = document.getElementById("itemAZ");
 // let directors = document.getElementById("directors")
 const films = data.films
@@ -12,8 +13,6 @@ const films = data.films
 
 const filmsCountDiv = document.getElementById("filmsCountDiv")
 
-
-
 const reseña = document.getElementById("reseña")
 reseña.style.display="none"
 let personajes_id = document.getElementById('personajes')
@@ -21,12 +20,10 @@ personajes_id.style.display="none"
 let locaciones = document.getElementById('locaciones')
 locaciones.style.display ="none"
 
-
-
 const mainImagen = document.querySelector(".mainImagen")
 
 function showFilms(element){
-  filmsCountDiv.innerHTML = "Aquí hay un total de " + element.length + " peliculas.";
+  filmsCountDiv.innerHTML = "Aquí hay un total de " + element.length + " películas.";
   mainImagen.innerHTML= "";
   for (const film of element){
     const elementIndex = `
@@ -56,7 +53,6 @@ showFilms(films)
 
 
 const plus = document.getElementById("plus")
-// const posterTitle = document.querySelector(".posterTitle")
 
 plus.addEventListener("click",function(){
   function showFilms(element){
@@ -84,7 +80,6 @@ plus.addEventListener("click",function(){
   showFilms(films)
   
 })
-
 
 itemAZ.addEventListener("change",(event)=>{
   const selectedSort = event.target.value;
